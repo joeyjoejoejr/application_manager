@@ -37,6 +37,7 @@ group :development do
   gem "guard-rspec"
   gem "guard-spork"
    gem "spork", "> 0.9.0.rc"
+  gem "annotate"
 end
 
 gem "jquery-rails"

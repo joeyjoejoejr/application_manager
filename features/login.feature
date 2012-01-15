@@ -5,7 +5,7 @@ Feature: Login Manageer
 
 Scenario Outline: Show user profile or ask to log in
 	Given the following user records
-	| username | password | admin |
+	| first_name | password | admin |
 	| bob | secret | false |
 	| admin | secret | true |
 	Given I am logged in as "<login>" with password "secret"
