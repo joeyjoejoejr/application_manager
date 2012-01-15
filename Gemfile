@@ -44,6 +44,7 @@ gem "jquery-rails"
 
 group :test do
   gem "spork", "> 0.9.0.rc"
+  gem "webrat"
   gem "guard-spork"
   gem "database_cleaner"
   gem "launchy"

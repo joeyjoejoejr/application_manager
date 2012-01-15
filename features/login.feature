@@ -3,17 +3,22 @@ Feature: Login Manageer
 	As a user
 	I want a fully functioning login system
 
-Scenario Outline: Show user profile or ask to log in
-	Given the following user records
-	| first_name | password | admin |
-	| bob | secret | false |
-	| admin | secret | true |
-	Given I am logged in as "<login>" with password "secret"
-	When I visit the root path
-	Then I should <action>
+#Scenario Outline: Show user profile or ask to log in
+#	Given the following user records
+#	| email | password | admin |
+#	| bob@example.com | secret | false |
+#	| admin@example.com | secret | true |
+#	Given I am logged in as "<login>" with password "secret"
+#	When I visit the root path
+#	Then I should <action>
+#
+#	Examples:
+#	| login | action |
+#	| admin@example.com | not see "Sign up" |
+#	| bob@example.com | not see "Sign up" |
+#	| | see "Sign up" |
 
-	Examples:
-	| login | action |
-	| admin | not see "Sign up" |
-	| bob | not see "Sign up" |
-	| | see "Sign up" |
+Scenario: Create a new user
+	Given I am on the new User page
+	When I fill out the new user form with valid information
+	Then I should be on my profile page
