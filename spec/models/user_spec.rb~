@@ -11,7 +11,7 @@ describe User do
 		
 		before(:each) do
 			@attr = Factory.attributes_for(:user)
-			@user = User.create!(@attr)
+			User.create!(@attr)
 		end
 		
       it "should return nil on email/password mismatch" do

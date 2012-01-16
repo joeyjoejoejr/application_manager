@@ -26,5 +26,5 @@ Scenario: Create a new user
 Scenario: Fail to create a new user
 	Given I am on the new User page
 	When I fill out the new user form with invalid information
-	Then I should see "Sign up"
+	Then I should see see "Sign up"
 
