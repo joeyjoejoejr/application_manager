@@ -14,11 +14,9 @@ module NavigationHelpers
     when /the new User page/
       new_user_path
 
-    # Add more mappings here.
-    # Here is an example that pulls values out of the Regexp:
-    #
-    #   when /^(.*)'s profile page$/i
-    #     user_profile_path(User.find_by_login($1))
+
+    when /User's profile page$/i
+      user_path(User.first)
 
     else
       begin

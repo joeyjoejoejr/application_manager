@@ -21,4 +21,4 @@ Feature: Login Manageer
 Scenario: Create a new user
 	Given I am on the new User page
 	When I fill out the new user form with valid information
-	Then I should be on my profile page
+	And I should be on User's profile page
