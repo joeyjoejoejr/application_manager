@@ -21,4 +21,10 @@ Feature: Login Manageer
 Scenario: Create a new user
 	Given I am on the new User page
 	When I fill out the new user form with valid information
-	And I should be on User's profile page
+	Then I should be on User's profile page
+
+Scenario: Fail to create a new user
+	Given I am on the new User page
+	When I fill out the new user form with invalid information
+	Then I should see see "Sign up"
+
