@@ -33,6 +33,6 @@ end
 When /^I dump.* the response$/ do
   puts @user.email
   puts @user.password
-  puts User.all.to_s
+  puts User.find_by_id(@user).to_s
   puts body
 end
