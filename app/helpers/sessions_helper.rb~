@@ -2,16 +2,17 @@ module SessionsHelper
 
 	def sign_in(user)
 		cookies.permanent.signed[:remember_token] = [user.id, user.salt]
-		current_user= user
+		self.current_user = user
 	end
 	
 	def signed_in?
-		!@current_user.nil?
+		!self.current_user.nil?
 	end
 	
 	def sign_out
 		cookies.delete(:remember_token)
 		self.current_user = nil
+		
 	end
 	
 	def current_user=(user)
@@ -20,6 +21,19 @@ module SessionsHelper
 	
 	def current_user
 		@current_user ||= user_from_remember_token
+	end
+	
+	def redirect_back_or (default)
+		redirect_to(session[:return_to]|| default)
+		clear_session
+	end
+	
+	def clear_session
+		session[:return_to] = nil
+	end
+	
+	def store_path
+		session[:return_to] = request.fullpath
 	end
 	
 	private
