@@ -81,28 +81,29 @@ describe UsersController do
 	  		end
 	  		
 	  		it "should sign in user" do
-				post :create, :user => @attr
-				controller.current_user == @user
-				controller.should be_signed_in
-			end
+					post :create, :user => @attr
+					controller.current_user == @user
+					controller.should be_signed_in
+				end
 	  	end
-	  	
-	  	describe "GET 'edit'" do
-	  		before(:each) do
-	  			@user = Factory.create(:user)
-	  			test_sign_in(@user)
-	  		end
+	  end
+	  
+	  describe "GET 'edit'" do
+	  	before(:each) do
+	  		@user = Factory.create(:user)
+	  		test_sign_in(@user)
+	 		end
 	  	 
-	  		it "should be successful" do
-	  			get :edit, :id => @user
-	  			response.should be_success
-	  		end
+	 		it "should be successful" do
+  			get :edit, :id => @user
+  			response.should be_success
+  		end
 	  		
-	  		it "should have the right title" do
-	  			get :edit, :id => @user
-	  			response.should have_selector('title', :content => 'Edit user')
-	  		end 
-  	end
+	  	it "should have the right title" do
+	  		get :edit, :id => @user
+	 			response.should have_selector('title', :content => 'Edit user')
+	 		end 
+ 		end
   	
   	describe "PUT 'update'" do
   		
@@ -149,5 +150,21 @@ describe UsersController do
    			end
    		end
   	end
-  end
+  	
+  	describe "authentication of edit/update actions" do
+  		
+  		before(:each) do
+  			@user = Factory.create(:user)
+  		end
+  		
+  		it "should deny access to 'edit'" do
+  			get :edit, :id => @user
+  			response.should redirect_to(signin_path)
+  		end
+  		
+  		it "should deny access to 'update'" do
+  			put :update, :id => @user, :user => {}
+  			response.should redirect_to(signin_path)
+  		end
+  	end
 end
