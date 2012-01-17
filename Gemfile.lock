@@ -73,6 +73,7 @@ GEM
     factory_girl_rails (1.1.beta1)
       factory_girl (~> 2.0.0.beta)
       rails (>= 3.0.0)
+    faker (0.3.1)
     ffi (1.0.11)
     gherkin (2.7.3)
       json (>= 1.4.6)
@@ -189,6 +190,7 @@ GEM
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
       rack-test (>= 0.5.3)
+    will_paginate (3.0.pre4)
     win32-api (1.4.8-x86-mingw32)
     win32-process (0.6.5)
       windows-pr (>= 1.1.2)
@@ -212,6 +214,7 @@ DEPENDENCIES
   database_cleaner
   execjs
   factory_girl_rails (= 1.1.beta1)
+  faker (= 0.3.1)
   guard
   guard-cucumber
   guard-rspec
@@ -228,3 +231,4 @@ DEPENDENCIES
   turn (~> 0.8.3)
   uglifier (>= 1.0.3)
   webrat
+  will_paginate (= 3.0.pre4)

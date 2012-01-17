@@ -15,7 +15,7 @@ module NavigationHelpers
       new_user_path
     
     when /the edit user page/
-    	edit_user_path(:id => 3)
+    	edit_user_path(@user)
 
 
     when /User's profile page$/i

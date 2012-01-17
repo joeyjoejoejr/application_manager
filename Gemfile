@@ -18,6 +18,7 @@ end
 gem 'jquery-rails'
 gem 'execjs'
 gem 'therubyracer'
+gem 'will_paginate', '3.0.pre4'
 
 
 # To use ActiveModel has_secure_password
@@ -41,7 +42,8 @@ group :development do
   gem "guard-spork"
   gem "spork", "> 0.9.0.rc"
   gem 'ruby_gntp'
-  gem 'annotate', '~> 2.4.1.beta' 
+  gem 'annotate', '~> 2.4.1.beta'
+  gem 'faker', '0.3.1' 
 end
 
 gem "jquery-rails"
