@@ -7,5 +7,5 @@ Feature: Users Page
 		Given that I am signed in
 		And I am an admin
 		When I go to the user list
-		Then I should see the user list
+		Then I should see "All applicant"
 		

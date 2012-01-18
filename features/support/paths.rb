@@ -17,12 +17,11 @@ module NavigationHelpers
     when /the edit user page/
     	edit_user_path(@user)
 
-
     when /User's profile page$/i
       user_path(User.find_by_id(1))
       
     when /the user list/
-    	user_path
+    	users_path
 
     else
       begin

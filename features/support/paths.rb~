@@ -20,6 +20,9 @@ module NavigationHelpers
 
     when /User's profile page$/i
       user_path(User.find_by_id(1))
+      
+    when /the user list/
+    	users_path
 
     else
       begin
