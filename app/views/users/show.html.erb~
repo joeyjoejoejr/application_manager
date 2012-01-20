@@ -1,6 +1,6 @@
 <h1><%= @title %></h1>
 <% if @user.application.nil? %>
 <div class = "link_button">
-<%= link_to 'Create an Application', new_application_path %>
+<%= link_to 'Create an Application', '#' %>
 </div>
 <% end %>s

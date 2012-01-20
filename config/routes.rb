@@ -1,5 +1,4 @@
 ApplicationManager::Application.routes.draw do
-  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -12,9 +11,10 @@ ApplicationManager::Application.routes.draw do
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
+  resources :applications
   resources :users
   resources :sessions, :only => [:new, :create, :destroy, :index]
-  
+ 
   root :to => 'users#index'
   
   match '/signup',		:to => 'users#new'
