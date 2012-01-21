@@ -1,5 +1,5 @@
 Given /^I am an admin$/ do
-  @user.admin = true
+  user.admin = true
 end
 
 Then /^I should see the user list$/ do

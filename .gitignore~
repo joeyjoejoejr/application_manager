@@ -22,4 +22,3 @@ public/stylesheets/compiled/
 public/system/*
 tmp/restart.txt
 coverage/
-webrat.log

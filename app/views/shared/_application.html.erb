@@ -1,0 +1,14 @@
+<h2>Application</h2>
+<table class = "app_table">
+  <tr>
+    <td id = "label">Address</td><td><%= @user.application.address %></td>
+  </tr>
+  <tr>
+    <td id = "label">City:</td><td><%= @user.application.city %></td>
+    <td id = "label">State:</td><td><%= @user.application.state %></td>
+    <td id = "label">Zip:</td><td><%= @user.application.zip_code %></td>
+  </tr>
+  <tr>
+    <td if = Label>Phone:</td><td><%= @user.application.phone_number %></td>
+  </tr>
+</table>

@@ -14,5 +14,12 @@ Feature: Application
     And I don't have an application
     When I go to the User's profile page
     And Fill out the application form
-    Then I should have an application
+    Then the user should have an application
+    
+  Scenario: View Application
+    Given that I am signed in
+    And I do have an application
+    When I go to the User's profile page
+    And I dump the response
+    Then I should see their application
     

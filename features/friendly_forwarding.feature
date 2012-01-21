@@ -7,5 +7,4 @@ Feature: Friendly_Forwarding
 		Given that I am not signed in
 		When I go to the edit user page
 		And I log in as the correct user
-		#And I dump the response
 		Then I should be on the edit user page

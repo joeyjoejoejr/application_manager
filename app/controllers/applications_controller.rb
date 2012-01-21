@@ -4,7 +4,7 @@ class ApplicationsController < ApplicationController
   
   
   def show
-    
+    redirect_to @user
   end
 
   def new

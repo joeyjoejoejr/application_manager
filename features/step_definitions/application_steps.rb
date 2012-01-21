@@ -1,5 +1,9 @@
-Given /^I don't have an application$/ do
-  @user.application.nil?
+Given /^I ([^"]*) have an application$/ do |yes|
+  if yes == "do"
+    user.create_application(:zip_code => 27777, :phone_number => "919-999-9999")
+  else
+    user.application.nil?
+  end
 end
 
 When /^Fill out the application form$/ do
@@ -12,8 +16,13 @@ When /^Fill out the application form$/ do
   click_button "Submit Application"
 end
 
-Then /^I should have an application$/ do
-  user = User.first
+Then /^the user should have an application$/ do
   user.application.should_not be_nil
+end
+
+Then /^I should see their application$/ do
+  page.should have_content("Foo Bar")
+  page.should have_content("Address")
+  page.should have_content("Zip")
 end
 

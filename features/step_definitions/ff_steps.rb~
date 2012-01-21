@@ -1,21 +1,25 @@
 
 Given /^that I ([^"]*) signed in$/ do |f|
-  @user = Factory(:user, :email => 'new@newemail.com')
   if f == "am"
   	visit signin_path
-  	sign_in(@user)
+  	sign_in(user)
   else
   	visit signout_path
   end
 end
 
 When /^I log in as the correct user$/ do
-  fill_in 'Email',	:with => 'new@newemail.com'
-  fill_in 'Password',:with => @user.password
+  sign_in(user)
+end
+
+def sign_in(the_user)
+	puts the_user.password
+	fill_in 'Email',	:with => the_user.email
+  fill_in 'Password',:with => "secret""
   click_button 'Sign in'
 end
 
-def sign_in(user)
-	
+def user
+   User.first || Factory(:user)
 end
 
