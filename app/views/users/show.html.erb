@@ -5,4 +5,5 @@
   </div>
   <% else %>
     <%= render "shared/application" %>
+    <%= link_to 'Edit Application', edit_application_path(@user.application) %>
 <% end %>

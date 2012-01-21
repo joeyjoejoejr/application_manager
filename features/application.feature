@@ -13,7 +13,7 @@ Feature: Application
     Given that I am signed in
     And I don't have an application
     When I go to the User's profile page
-    And Fill out the application form
+    And Fill out the new application form
     Then the user should have an application
     
   Scenario: View Application
@@ -22,4 +22,11 @@ Feature: Application
     When I go to the User's profile page
     And I dump the response
     Then I should see their application
+    
+  Scenario: Edit Application
+    Given that I am signed in
+    And I do have an application
+    And I am on the User's profile page
+    And Fill out the edit application form
+    Then I should see the updated information
     

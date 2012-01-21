@@ -25,9 +25,20 @@ class ApplicationsController < ApplicationController
   end
 
   def edit
+    @user = current_user
+    @application = @user.application
+    @title = "Edit Application"
   end
 
   def update
+    @user = current_user
+    @application = @user.application
+    if @application.update_attributes(params[:application])
+			redirect_to @user
+		else
+			@title = 'Edit Application'
+			render 'edit'
+		end
   end
 
   def destroy

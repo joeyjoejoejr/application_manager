@@ -1,0 +1,2 @@
+<h1>Edit Application for <%= "#{@user.first_name} #{@user.last_name}" %></h1>
+<p>Find me in app/views/applications/edit.html.erb</p>

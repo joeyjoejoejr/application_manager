@@ -3,7 +3,6 @@
   <div class = "link_button">
     <%= link_to 'Create an Application', new_application_path %>
   </div>
-  <% else if %>
+  <% else %>
     <%= render "shared/application" %>
-  <% end %>
 <% end %>
