@@ -1,10 +1,10 @@
 class ApplicationsController < ApplicationController
   before_filter :require_signin
-  before_filter :correct_user, :only => [:show, :edit, :update, :destroy]
+  before_filter :correct_user, :only => [ :edit, :update, :destroy]
   
   
   def show
-    redirect_to @user
+    redirect_to root_path
   end
 
   def new
@@ -25,14 +25,14 @@ class ApplicationsController < ApplicationController
   end
 
   def edit
-    @user = current_user
-    @application = @user.application
+    @application = Application.find(params[:id])
+    @user = User.find_by_id(@application.user_id)
     @title = "Edit Application"
   end
 
   def update
-    @user = current_user
-    @application = @user.application
+    @application = Application.find(params[:id])
+    @user = User.find_by_id(@application.user_id)
     if @application.update_attributes(params[:application])
 			redirect_to @user
 		else
@@ -52,7 +52,7 @@ class ApplicationsController < ApplicationController
   	end
   	
   	def correct_user
-			@user = User.find(params[:id])
+  	  @user = User.find_by_id(Application.find(params[:id]).user_id)
 			redirect_to root_path unless @user == current_user || current_user.admin?
 		end
 end
