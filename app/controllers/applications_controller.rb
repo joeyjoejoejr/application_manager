@@ -1,10 +1,10 @@
 class ApplicationsController < ApplicationController
   before_filter :require_signin
-  before_filter :correct_user, :only => [ :edit, :update, :destroy]
+  before_filter :correct_user, :only => [ :show, :edit, :update, :destroy]
   
   
   def show
-    redirect_to root_path
+    redirect_to current_user
   end
 
   def new
@@ -42,6 +42,9 @@ class ApplicationsController < ApplicationController
   end
 
   def destroy
+    @application = Application.find(params[:id]).destroy
+    @user = User.find_by_id(@application.user_id)
+    redirect_to @user
   end
   
   private

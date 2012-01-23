@@ -27,6 +27,13 @@ Feature: Application
     Given that I am signed in
     And I do have an application
     And I am on the User's profile page
-    And Fill out the edit application form
+    When Fill out the edit application form
     Then I should see the updated information
+    
+  Scenario: Delete Application
+    Given that I am signed in
+    And I do have an application
+    And I am on the User's profile page
+    When I follow "Delete Application"
+    Then I should not have an application
     

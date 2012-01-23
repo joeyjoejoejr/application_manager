@@ -22,6 +22,11 @@ When /^Fill out the ([^"]*) application form$/ do |age|
   click_button "Submit Application"
 end
 
+Then /^I should see the updated information$/ do
+  page.should have_content("321 Main St")
+end
+
+
 Then /^the user should have an application$/ do
   user.application.should_not be_nil
 end

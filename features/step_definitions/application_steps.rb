@@ -2,7 +2,7 @@ Given /^I ([^"]*) have an application$/ do |yes|
   if yes == "do"
     user.create_application(:zip_code => 27777, :phone_number => "919-999-9999")
   else
-    user.application.nil?
+    user.application.should be_nil
   end
 end
 
