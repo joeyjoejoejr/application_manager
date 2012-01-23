@@ -18,7 +18,8 @@ end
 gem 'jquery-rails'
 gem 'execjs'
 gem 'therubyracer'
-gem 'will_paginate', '3.0.pre2'
+gem 'will_paginate', '3.0.pre4'
+gem 'nested_form'
 
 
 # To use ActiveModel has_secure_password
