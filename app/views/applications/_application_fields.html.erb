@@ -1,5 +1,14 @@
 <%= form_for @application do |f| %>
 	 <div class="field">
+	 	<h3>Interests</h3>
+  	<%= hidden_field_tag "application[interest_ids][]", nil%>
+  	<% Interest.all.each do |interest| %>
+    	<%= check_box_tag "application[interest_ids][]", interest.id, @application.interest_ids.include?(interest.id),  id: dom_id(interest) %>
+   	 	<%= label_tag dom_id(interest), interest.name %><br/>
+  	<% end %>
+		</div>
+	 <h3>Personal Information</h3>
+	 <div class="field">
 	  <%= f.label :address %><br />
 	  <%= f.text_field :address %>
 	 </div>

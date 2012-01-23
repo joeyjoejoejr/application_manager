@@ -1,4 +1,10 @@
 <h2>Application</h2>
+<b>Interests:</b>
+<ul>
+  <% @user.application.interests.each do |interest| %>
+    <li><%= interest.name %></li>
+  <% end %>
+</ul>
 <table class = "app_table">
   <tr>
     <td id = "label">Address</td><td><%= @user.application.address %></td>

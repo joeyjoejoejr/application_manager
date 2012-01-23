@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120120025535) do
+ActiveRecord::Schema.define(:version => 20120123170106) do
 
   create_table "applications", :force => true do |t|
     t.integer  "user_id"
@@ -25,6 +25,19 @@ ActiveRecord::Schema.define(:version => 20120120025535) do
   end
 
   add_index "applications", ["user_id", "created_at"], :name => "index_applications_on_user_id_and_created_at"
+
+  create_table "interest_checkers", :force => true do |t|
+    t.integer  "interest_id"
+    t.integer  "application_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "interests", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "first_name"

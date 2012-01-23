@@ -20,7 +20,6 @@ Feature: Application
     Given that I am signed in
     And I do have an application
     When I go to the User's profile page
-    And I dump the response
     Then I should see their application
     
   Scenario: Edit Application
@@ -36,4 +35,19 @@ Feature: Application
     And I am on the User's profile page
     When I follow "Delete Application"
     Then I should not have an application
+    
+  Scenario: See interest checkboxes on the new page
+  	Given that I am signed in
+  	And I don't have an application
+  	And there are interests in the database
+  	And I am on the User's profile page
+  	When I follow "Create an Application"
+  	Then I should see the interest checkboxes
+  	
+  Scenario: Same checkboxes should be checked
+  	Given that I am signed in
+  	And I am on the User's profile page
+  	And Fill out the new application form
+  	When I follow "Edit Application"
+  	Then the "application[interest_ids][]" checkbox should be checked
     

@@ -1,7 +1,9 @@
 class Application < ActiveRecord::Base
-attr_accessible :address , :city, :state, :zip_code, :phone_number
+attr_accessible :address , :city, :state, :zip_code, :phone_number, :interest_ids
 
 belongs_to :user
+has_many :interest_checkers
+has_many :interests, :through => :interest_checkers
 
 validates :zip_code, 			:numericality => { :only_integer =>true,
 													:greater_than => 9999,

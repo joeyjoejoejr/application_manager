@@ -7,6 +7,7 @@ Given /^I ([^"]*) have an application$/ do |yes|
 end
 
 When /^Fill out the ([^"]*) application form$/ do |age|
+  Interest.create(:name => "Semester Internship")
   if age == "new"
     click_link "Create an Application"
     address = "123 Main St"
@@ -19,6 +20,7 @@ When /^Fill out the ([^"]*) application form$/ do |age|
   fill_in "City",				:with => "Anywhere"
   fill_in "application_zip_code",	  		:with => "27777"
   fill_in "application_phone_number",:with => "919-593-6333"
+  check "application[interest_ids][]"
   click_button "Submit Application"
 end
 
@@ -29,6 +31,7 @@ end
 
 Then /^the user should have an application$/ do
   user.application.should_not be_nil
+  page.should have_content("Semester Internship")
 end
 
 Then /^I should see their application$/ do
@@ -36,4 +39,15 @@ Then /^I should see their application$/ do
   page.should have_content("Address")
   page.should have_content("Zip")
 end
+
+Given /^there are interests in the database$/ do
+  Interest.create(:name => "Semester Internship")
+end
+
+Then /^I should see the interest checkboxes$/ do
+	page.should have_content("Interests")
+	
+	page.should have_selector("input[type= 'checkbox']", :content => 'Semester Internship')
+end
+
 

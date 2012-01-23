@@ -43,7 +43,7 @@ class ApplicationsController < ApplicationController
 
   def destroy
     @application = Application.find(params[:id]).destroy
-    #@user = User.find_by_id(@application.user_id).application = nil
+    @user = User.find_by_id(@application.user_id)
     redirect_to @user
   end
   
