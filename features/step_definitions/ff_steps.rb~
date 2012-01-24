@@ -15,7 +15,7 @@ end
 def sign_in(the_user)
 	puts the_user.password
 	fill_in 'Email',	:with => the_user.email
-  fill_in 'Password',:with => "secret""
+  fill_in 'Password',:with => "secret"
   click_button 'Sign in'
 end
 

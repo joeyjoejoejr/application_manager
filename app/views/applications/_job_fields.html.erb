@@ -5,11 +5,15 @@
 	</div> 
 	<div class = "fields">
 	  <%= f.label :start_date, "Start Date" %>
-   	<%= f.date_select(:start_date, :order => [:month,:year]) %>
+   	<%= f.date_select(:start_date, { :order => [:month,:year],
+   	                                 :start_year=> Time.now.year - 50,
+   	                                 :end_year => Time.now.year }) %>
 	</div>
 	<div class = "fields">
 	  <%= f.label :end_date, "End Date " %>
-   	<%= f.date_select(:end_date, :order => [:month,:year]) %>
+   	<%= f.date_select(:end_date, { :order => [:month,:year],
+   	                               :start_year=> Time.now.year - 50,
+   	                               :end_year => Time.now.year }) %>
 	</div>
 	<div class = "fields">
 		<%= f.label :responsibilities, "Responsibilities" %> <br />

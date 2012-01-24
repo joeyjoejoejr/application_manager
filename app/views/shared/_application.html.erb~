@@ -22,7 +22,7 @@
 <h3>Education</h3>
   <% @user.application.schools.each do |school| %>
     <table class = "school_tabel">
-      <tr><td><b>Type:</b></td><td><%= school.type %></td></tr>
+      <tr><td><b>Type:</b></td><td><%= school.school_type %></td></tr>
       <tr><td><b>Name:</b></td><td><%= school.name %></td></tr>
       <tr><td><b>Major:</b></td><td><%= school.major %></td></tr>
       <tr>
@@ -30,3 +30,26 @@
       </tr>
     </table>
   <% end %>
+<h3>Employment</h3>
+<% @user.application.jobs.each do |job| %>
+    <table class = "job_tabel">
+      <tr><td><b>Organization:</b></td><td><%= job.organization %></td></tr>
+      <tr><td><b>Responsibilities:</b></td></tr>
+      <tr><td><%= job.responsibilities %></td></tr>
+      <tr>
+      <td><b>Start: </b></td><td><%= job.start_date %></td>
+      <td><b>End: </b></td><td><%= job.end_date %></td>
+      </tr>
+    </table>
+  <% end %>
+<div class="questions">
+<h3>Questions</h3>
+<p><%= question1 %></p>  
+<p><%= text_area_tag :answer1, @user.application.answer1, :size => "40x15", 
+                      :disabled => "true"  %></p>
+<p><%= question2 %></p>  
+<p><%= @user.application.answer2 %></p>
+<p><%= question3 %></p>  
+<p><%= @user.application.answer3 %></p>
+</div>
+

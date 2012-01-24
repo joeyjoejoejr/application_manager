@@ -30,3 +30,28 @@
       </tr>
     </table>
   <% end %>
+<h3>Employment</h3>
+<% @user.application.jobs.each do |job| %>
+    <table class = "job_tabel">
+      <tr><td><b>Organization:</b></td><td><%= job.organization %></td></tr>
+      <tr><td><b>Responsibilities:</b></td></tr>
+      <tr><td><%= job.responsibilities %></td></tr>
+      <tr>
+      <td><b>Start: </b></td><td><%= job.start_date %></td>
+      <td><b>End: </b></td><td><%= job.end_date %></td>
+      </tr>
+    </table>
+  <% end %>
+<div class="questions">
+<h3>Questions</h3>
+<p><%= question1 %></p>  
+<p><%= text_area_tag :answer1, @user.application.answer1, :size => "40x15", 
+                      :disabled => "true"  %></p>
+<p><%= question2 %></p>  
+<p><%= text_area_tag :answer2, @user.application.answer2, :size => "40x15", 
+                      :disabled => "true"  %></p>
+<p><%= question3 %></p>  
+<p><%= text_area_tag :answer3, @user.application.answer3, :size => "40x15", 
+                      :disabled => "true"  %></p>
+</div>
+

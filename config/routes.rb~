@@ -15,7 +15,8 @@ ApplicationManager::Application.routes.draw do
   resources :users
   resources :sessions, :only => [:new, :create, :destroy, :index]
  
-  root :to => user_path(User.find_by_email(:email))
+  #@user = User.find_by_email(:email)
+  root :to => 'users#show'
   
   match '/signup',		:to => 'users#new'
   match '/signin',		:to	=> 'sessions#new'

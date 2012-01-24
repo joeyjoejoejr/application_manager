@@ -1,6 +1,7 @@
 class Application < ActiveRecord::Base
 attr_accessible :address , :city, :state, :zip_code, :phone_number, 
-								:interest_ids, :schools_attributes, :jobs_attributes
+								:interest_ids, :schools_attributes, :jobs_attributes, :answer1,
+								:answer2, :answer3
 
 belongs_to :user
 has_many :jobs, :dependent => :destroy

@@ -3,8 +3,6 @@ Given /^that I ([^"]*) signed in$/ do |f|
   if f == "am"
   	visit signin_path
   	sign_in(user)
-  else
-  	visit signout_path
   end
 end
 

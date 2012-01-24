@@ -8,8 +8,8 @@
     <%= link_to 'Edit Application', edit_application_path(@user.application) %>
     <%= link_to "Delete Application", @user.application, :method => :delete, :confirm => "You sure?",
                                 :title => "Delete Application" %>
-    <% if current_user.admin? %>
-  	 	<%= link_to "All Users", users_path %>
-  	<% end %>
-                                
 <% end %>
+<% if current_user.admin? %>
+ 	<%= link_to "All Users", users_path %>
+<% end %>
+                                
