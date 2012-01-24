@@ -1,5 +1,5 @@
 ApplicationManager::Application.routes.draw do
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -15,7 +15,8 @@ ApplicationManager::Application.routes.draw do
   resources :users
   resources :sessions, :only => [:new, :create, :destroy, :index]
  
-  root :to => 'users#index'
+  @user = User.find_by_email(:email)
+  root :to => 'user/#{@user.id}'
   
   match '/signup',		:to => 'users#new'
   match '/signin',		:to	=> 'sessions#new'

@@ -15,7 +15,7 @@ class ApplicationsController < ApplicationController
   
   def create
     @user = current_user
-    @application = @user.create_application(params[:application])
+    @application = @user.build_application(params[:application])
     if @user.application.save
       redirect_to @application
     else

@@ -1,22 +1,22 @@
-<div class = "school_field">
-	 <div class = "field">
-		<%= f.label :type, "Type" %></br>
-		<%= f.select(:type , %w[undergrad graduate other], {}, { :index => nil }) %>
-	</div> 
-	<div class = "field">
+<div class = "fields">
+	 <div class = "fields">
+		<%= f.label :school_type, "Type" %></br>
+		<%= f.select(:school_type, %w[undergrad graduate other]) %>
+	</div>
+	<div class = "fields">
 		<%= f.label :name, "School Name" %>
 		<%= f.text_field :name %>
 	</div> 
-	<div class = "field">
+	<div class = "fields">
 		<%= f.label :major, "Major " %>
 		<%= f.text_field :major %>
 	</div> 
-	<div class = "field">
+	<div class = "fields">
 		<%= f.label :degree, "Degree " %>
 		<%= f.text_field :degree %>
 	</div> 
-	<div class = "field">
+	<div class = "fields">
    	<%= f.date_select(:date_recieved, :order => [:month,:year]) %>
 	</div>
-		<%= f.link_to_remove "remove" %>
-</div>
+	<%= f.link_to_remove "remove" %>
+ </div>

@@ -1,5 +1,5 @@
 <%= nested_form_for @application do |f| %>
-	 <div class="field">
+	 <div class="fields">
 	 	<h3>Interests</h3>
   	<%= hidden_field_tag "application[interest_ids][]", nil%>
   	<% Interest.all.each do |interest| %>
@@ -8,29 +8,35 @@
   	<% end %>
 		</div>
 	 <h3>Personal Information</h3>
-	 <div class="field">
+	 <div class="fields">
 	  <%= f.label :address %><br />
 	  <%= f.text_field :address %>
 	 </div>
-	  <div class="field">
+	  <div class="fields">
 	  <%= f.label :city %><br />
 	  <%= f.text_field :city %>
 	 </div>
-	 <div class="field">
+	 <div class="fields">
 	  <%= f.label :state %><br />
 	  <%= f.text_field :state %>
 	 </div>
-	 <div class="field">
+	 <div class="fields">
 	  <%= f.label :zip %><br />
 	  <%= f.text_field :zip_code %>
 	 </div>
-	 <div class="field">
+	 <div class="fields">
 	  <%= f.label :phone_number %><br />
 	  <%= f.text_field :phone_number %>
 	 </div>
-	 <div class="actions">
+ 	  <div>
+ 	    <%= f.fields_for :schools %>
+  	  <%= f.link_to_add 'Add a school', :schools %>
+ 	  </div>
+ 	  <div>
+     	<%= f.fields_for :jobs %>
+     	<%= f.link_to_add 'Add an Employer', :jobs %>
+    </div
+ 	<div class="actions">
   		<%= f.submit "Submit Application" %>
  	</div>
- 	<%= f.fields_for :schools %>
- 	<%= f.link_to_add 'Add a school', :schools %>
 <% end %>

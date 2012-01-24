@@ -1,13 +1,15 @@
 class Application < ActiveRecord::Base
 attr_accessible :address , :city, :state, :zip_code, :phone_number, 
-								:interest_ids, :schools_attributes
+								:interest_ids, :schools_attributes, :jobs_attributes
 
 belongs_to :user
+has_many :jobs, :dependent => :destroy
 has_many :schools, :dependent => :destroy
 has_many :interest_checkers
 has_many :interests, :through => :interest_checkers
 
-accepts_nested_attributes_for :schools
+accepts_nested_attributes_for :schools, :allow_destroy => true
+accepts_nested_attributes_for :jobs, :allow_destroy => true
 
 validates :zip_code, 			:numericality => { :only_integer =>true,
 													:greater_than => 9999,

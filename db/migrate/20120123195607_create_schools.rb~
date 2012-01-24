@@ -6,7 +6,7 @@ class CreateSchools < ActiveRecord::Migration
       t.string :major
       t.string :degree
       t.date :date_recieved
-      t.date :application_id
+      t.integer :application_id
 
       t.timestamps
     end

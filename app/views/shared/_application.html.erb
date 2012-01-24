@@ -18,3 +18,15 @@
     <td if = Label>Phone:</td><td><%= @user.application.phone_number %></td>
   </tr>
 </table>
+
+<h3>Education</h3>
+  <% @user.application.schools.each do |school| %>
+    <table class = "school_tabel">
+      <tr><td><b>Type:</b></td><td><%= school.school_type %></td></tr>
+      <tr><td><b>Name:</b></td><td><%= school.name %></td></tr>
+      <tr><td><b>Major:</b></td><td><%= school.major %></td></tr>
+      <tr>
+      <td><b>Degree:</b></td><td><%= school.degree %></td><td><%= school.date_recieved %></td>
+      </tr>
+    </table>
+  <% end %>

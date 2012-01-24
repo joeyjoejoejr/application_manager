@@ -6,6 +6,6 @@
   <% else %>
     <%= render "shared/application" %>
     <%= link_to 'Edit Application', edit_application_path(@user.application) %>
-    <%= link_to "Delete Application", application, :method => :delete, :confirm => "You sure?",
+    <%= link_to "Delete Application", @user.application, :method => :delete, :confirm => "You sure?",
                                 :title => "Delete Application" %>
 <% end %>

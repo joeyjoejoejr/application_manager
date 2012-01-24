@@ -11,6 +11,8 @@ class ApplicationsController < ApplicationController
   	@user = current_user
   	@application = @user.build_application()
   	@title = "New Application"
+  	@application.schools.build
+  	@application.jobs.build
   end
   
   def create
