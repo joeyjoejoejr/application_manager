@@ -1,13 +1,12 @@
 <%= nested_form_for @application do |f| %>
-	 <div class="fields">
+	 <div class="fields eight columns">
 	 	<h3>Interests</h3>
   	<%= hidden_field_tag "application[interest_ids][]", nil%>
   	<% Interest.all.each do |interest| %>
     	<%= check_box_tag "application[interest_ids][]", interest.id, @application.interest_ids.include?(interest.id),  id: dom_id(interest) %>
    	 	<%= label_tag dom_id(interest), interest.name %><br/>
   	<% end %>
-		</div>
-	 <h3>Personal Information</h3>
+		<h3>Personal Information</h3>
 	 <div class="fields">
 	  <%= f.label :address %><br />
 	  <%= f.text_field :address %>
@@ -28,16 +27,15 @@
 	  <%= f.label :phone_number %><br />
 	  <%= f.text_field :phone_number %>
 	 </div>
- 	  <div>
- 	    <h3>Education</h3>
+	    <h3>Education</h3>
  	    <%= f.fields_for :schools %>
-  	  <%= f.link_to_add 'Add a School', :schools %>
- 	  </div>
- 	  <div>
+  	  <%= f.link_to_add 'Add a School', :schools, :class => "button small" %>
  	   	<h3>Employment</h3>
      	<%= f.fields_for :jobs %>
-     	<%= f.link_to_add 'Add an Employer', :jobs %>
+     	<%= f.link_to_add 'Add an Employer', :jobs, :class => "button small" %>
+
     </div>
+    <div class="eight columns">
     <h3>Questions</h3>
     <div class = "fields">
       <%= f.label :answer1, question1 %><br />
@@ -51,7 +49,8 @@
       <%= f.label :answer3, question3 %><br />
 	    <%= f.text_area :answer3 %>
     </div>
- 	<div class="actions">
+    </div>
+ 	<div class="clear actions">
   		<%= f.submit "Submit Application" %>
  	</div>
 <% end %>

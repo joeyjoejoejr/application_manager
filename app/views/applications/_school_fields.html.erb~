@@ -17,9 +17,9 @@
 	</div> 
 	<div class = "fields">
    	<%= f.date_select(:date_recieved, { :order => [:month,:year],
-   	                                    :start_year=> Time.now.year - 25,
+   	                                    :start_year=> Time.now.year - 50,
    	                                    :end_year => Time.now.year
    	                                   }) %>
 	</div>
-	<%= f.link_to_remove "remove" %>
+	<%= f.link_to_remove "remove", :class => "small button" %>
  </div>

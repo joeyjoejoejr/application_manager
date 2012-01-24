@@ -1,17 +1,23 @@
-<h1>All applicants</h1>
+<h2>All applicants</h2>
 <%= will_paginate %>
   <% if current_user.admin? %>
-    <ul class="users">
+    <table class="users">
+      <thead><th colspan = '3'>Users</th></thead>
     <% @users.each do |user| %>
-      <li>
-        <%= link_to "#{user.first_name} #{user.last_name}", user %>
-    	 	<%= link_to "delete", user, :method => :delete, :confirm => "You sure?",
+      <tr>
+        <td><%= link_to "#{user.first_name} #{user.last_name}", user %><td>
+    	 	<td><%= link_to "delete", user, :method => :delete, :confirm => "You sure?",
                                   :title => "Delete #{user.first_name} #{user.last_name}" %>
-        <%= link_to_function "Add to Entasso Talent Pool", "alert('Hire me to implement this feature')", :class => "entasso_button" %>
-      </li>
+        </td>
+        <td><%= link_to_function "Add to Entasso Talent Pool", 
+                                 "alert('Hire me to implement this feature')", 
+                                 :class => "button" %>
+        </td>
+      </tr>
     <% end %>
-    </ul>    
+    </table>    
   <% else %>
-    <%= link_to 'Your Application', user_path(current_user) %>
+    <p><%= link_to 'Your Application', user_path(current_user) %></p>
   <% end %>
+  <%= current_user.admin?.to_s %>
 <%= will_paginate %>

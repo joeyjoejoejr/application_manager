@@ -1,0 +1,30 @@
+<div id="wrap" class="container">
+  <div class="column-row">
+		<nav class="sixteen columns">
+			<div class="five" id="logo">
+				<h1><a href="http://www.8riverscapital.com/"><img src="http://www.8riverscapital.com/wp-content/themes/8rivers/images/8rivers_logo.png"></a></h1>
+			</div>
+      <ul id="menu-header-footer" class="menu">
+          <% if signed_in? %>
+            <li>
+              <%= link_to "Sign Out", signout_path %>
+            </li>
+            <li>
+              <%= link_to "Edit Account", edit_user_path(current_user) %>
+            </li>
+            <li>
+              <%= link_to "View Application", user_path(current_user) %>
+            </li>
+            
+          <% else %>
+            <li>
+              <%= link_to "Sign In", signin_path %>
+            </li>
+            <li>
+              <%= link_to "Sign Up", signup_path %>
+            </li>
+          <% end %>
+      </ul>			
+    </nav>
+	</div>
+</div>

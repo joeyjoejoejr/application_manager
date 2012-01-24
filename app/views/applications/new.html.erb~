@@ -1,3 +1,3 @@
 <h1>Application for <%= "#{@user.first_name} #{@user.last_name}" %></h1>
 
-<%= render :partial => "application_fields", :object => @application %>
+<%= render :partial => "application_fields", :locals => { :application => @application } %>

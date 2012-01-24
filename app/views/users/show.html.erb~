@@ -1,15 +1,15 @@
-<h1><%= @title %></h1>
 <% if @user.application.nil? %>
-  <div class = "link_button">
-    <%= link_to 'Create an Application', new_application_path %>
+  <h2><%= @title %><h2>
+  <div>
+    <%= link_to 'Create an Application', new_application_path, :class => "small button" %>
   </div>
-  <% else %>
-    <%= render "shared/application" %>
-    <%= link_to 'Edit Application', edit_application_path(@user.application) %>
+  <% else %>  
+     <%= render "shared/application" %>               
+     <p>
+    <%= link_to 'Edit Application', edit_application_path(@user.application), :class => "small left button" %></li>
+    </p>
+    <p>
     <%= link_to "Delete Application", @user.application, :method => :delete, :confirm => "You sure?",
-                                :title => "Delete Application" %>
-    <% if current_user.admin? %>
-  	 	<%= link_to "All Users", users_path %>
-  	<% end %>
-                                
-<% end %>
+                                :title => "Delete Application",:class => "left small button" %>
+    </p>                 
+<% end %> 

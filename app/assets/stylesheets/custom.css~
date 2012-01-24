@@ -1,0 +1,345 @@
+/* Welcome to Compass. In this file you should write your main styles. (or centralize your imports) Import this file using the following HTML or equivalent: <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+html {overflow-y: scroll;}
+
+section, header, footer, nav, article, aside, figure, hgroup { display: block; }
+
+h2 { font-size: 2.6em; color: black; }
+
+h3 { font-size: 2em; color: black; }
+
+h4 { font-size: 1.4em; color: black; }
+
+p { font-size: 1.4em; color: black; }
+
+.projects #profiles ul, .profile ul {
+	list-style-type: disc;
+	margin: 0px 0px 10px 20px;
+	font-size: 1.4em;
+}
+
+/* Sizer Defaults */
+#buttons { position: absolute; top: 310px; color: white; z-index: 1001; display:none;}
+#buttons ol { position: relative; left: 787px; }
+#buttons li { float: left; margin: 0 0 0 10px; display: block; width: 20px; height: 20px; background: rgba(255, 255, 255, 0.2); text-align: center; line-height: 2.5; font-size: 2.5em; font-family: Helvetica; cursor: pointer; -moz-box-shadow: rgba(255, 255, 255, 0.5) 1px 1px 1px 0; -webkit-box-shadow: rgba(255, 255, 255, 0.5) 1px 1px 1px 0; -o-box-shadow: rgba(255, 255, 255, 0.5) 1px 1px 1px 0; box-shadow: rgba(255, 255, 255, 0.5) 1px 1px 1px 0; }
+
+#buttons li.activeButton { background: rgba(255, 255, 255, 0.5); }
+
+#sizer { position: fixed; display: none; }
+#sizer img { height: 100%; width: 100%; z-index: 0; }
+
+.slide { z-index: 0; position: relative; }
+
+.active { z-index: 2; }
+
+.prev { z-index: 1; }
+
+.background-image { width: 100%; height: 100%; position: absolute; }
+
+#content { position: relative; top: 30px; width: 360px; height: 100%; }
+
+.slide-info { position: absolute; width: 360px; z-index: 1000; }
+.slide-info h2 { font-family: Arial, Helvetica, sans-serif; color: white; text-shadow: black 3px 3px 5px; font-size: 6em; margin-bottom: 0; }
+.slide-info p { font-family: Arial, Helvetica, sans-serif; color: white; text-shadow: black 2px 2px 2px; font-size: 1.6em; margin: -10px 0 15px 0; }
+.slide-info a { margin-top: 40px; }
+
+/*end */
+/*Slider Projects */
+#projects-page #thumbnails { width: 940px; height: 100px; margin: 0 0 0 20px; border-bottom: solid 1px #cccccc; }
+#projects-page #thumbnails li { display: block; width: 220px; height: 77px; float: left; margin: 0 20px 0 0; }
+
+#projects-page #thumb-mask { width: 940px; height: 100px; overflow: hidden; position: relative; }
+
+#projects-page #thumb-holder { position: absolute; }
+#projects-page #thumb-holder li { cursor: pointer; }
+
+#projects-page #left { width: 19px; height: 25px; background: transparent url(../images/rarrow.png) 0 0 no-repeat; float: right; position: relative; top: -75px; left: 30px; cursor: pointer; }
+
+#projects-page #right { width: 19px; height: 25px; background: transparent url(../images/larrow.png) 0 0 no-repeat; float: left; position: relative; top: -75px; left: -10px; cursor: pointer; }
+
+#projects-page #profiles { position: relative; margin-top: 50px; }
+#projects-page #profiles h3 { margin: 0 0 20px 0; }
+
+#projects-page .profile { width: 940px; height: 100%; margin-left: 20px; }
+#projects-page .profile .column-row { padding-bottom: 100px; }
+#projects-page .profile .column-row p { line-height: 1.6em; }
+
+#projects-page .profile .column-row .four {
+	float: left;
+	margin-left: 0;
+}
+#projects-page .profile .column-row .twelve {
+	float: right;
+	margin-top: -50px;
+}
+
+/*end */
+
+
+/*Slider Team */
+#thumbnails { width: 940px; height: 100px; margin: 0 0 0 0px; border-bottom: solid 1px #cccccc; }
+#thumbnails li { display: block; width: 100px; height: 100px; float: left; margin: 0 20px 0 0; }
+
+#thumb-mask { width: 940px; height: 100px; overflow: hidden; position: relative; }
+
+#thumb-holder { position: absolute; }
+#thumb-holder li { cursor: pointer; }
+
+#left { width: 29px; height: 100px; background: transparent url(../images/rarrow.png) right center no-repeat; float: right; position: relative; top: -100px; left: 30px; cursor: pointer; }
+
+#right { width: 19px; height: 100px; background: transparent url(../images/larrow.png) center center no-repeat; float: left; position: relative; top: -100px; left: -30px; cursor: pointer; }
+
+#profiles { position: relative; margin-top: 50px; }
+#profiles h3 { margin: 0; }
+
+.profile { width: 940px; height: 100%; margin-left: 20px; background-color: #FFFFFF; }
+.profile .column-row { padding-bottom: 100px; }
+.profile .column-row p { line-height: 1.6em; }
+.profile .column-row .four {
+	float: left;
+	margin-left: 0;
+}
+.profile .column-row .twelve {
+	float: right;
+	margin-top: -50px;
+}
+
+/*end */
+
+
+/* Buttons */
+.button { background: #ffc500; color: black; font-weight: bold; text-transform: uppercase; -moz-box-shadow: rgba(0, 0, 0, 0.55) 1px 1px 1px 0; -webkit-box-shadow: rgba(0, 0, 0, 0.55) 1px 1px 1px 0; -o-box-shadow: rgba(0, 0, 0, 0.55) 1px 1px 1px 0; box-shadow: rgba(0, 0, 0, 0.55) 1px 1px 1px 0; -moz-border-radius: 0px; -webkit-border-radius: 0px; -o-border-radius: 0px; -ms-border-radius: 0px; -khtml-border-radius: 0px; border-radius: 0px; }
+
+.button.small { padding: 6px 11px 6px 11px; font-size: 1.2em; }
+
+.button.large { padding: 18px 20px 20px 20px; font-size: 1.6em; }
+
+.button:hover { background-color: #ffd64d; color: black; }
+
+/*.button.active { position: relative; top: 1px; }*/
+
+/* end */
+
+
+
+
+* { margin: 0; }
+
+body { font-size: 62.5%; background: black url(bgstripe.png) center top repeat-y;}
+body#home-page { background: black;}
+
+#index-page { overflow: scroll; }
+
+#opportunities-page #wrap { background: transparent url(../images/opps-bg.jpg) top center no-repeat; overflow: auto; padding-bottom: 80px; }
+
+#opportunity-listing-page #wrap, #current-opportunities-page #wrap { background: transparent url(../images/opps-bg.jpg) top center no-repeat; overflow: auto; padding-bottom: 80px; }
+
+#innovators-page #wrap { background: transparent url(../images/innovators-bg.jpg) top center no-repeat; padding-bottom: 80px; }
+
+#projects-page #wrap { background: transparent url(../images/project-bg.jpg) top center no-repeat; padding-bottom: 80px; }
+
+#blog-page #wrap { background: transparent url(../images/blog-bg.jpg) top center no-repeat; overflow: auto; padding-bottom: 80px; }
+
+#office-page #wrap, #about-page #wrap { background: transparent url(../images/office-bg.jpg) top center no-repeat; overflow: auto; padding-bottom: 80px; }
+#contact-page #wrap { background: transparent url(../images/contact-bg.jpg) top center no-repeat; overflow: auto; padding-bottom: 80px; }
+#office-page nav, #about-page nav, #contact-page nav { padding-bottom: 205px; }
+
+#media-page nav { margin-bottom:20px; }
+
+#wrap { z-index: 1000; padding-bottom: 50px; padding-right:40px; padding-left:40px; }
+
+#logo { background-color: rgba(0, 0, 0, 0.55); height: 50px; width: 368px; float: left; margin-top: 5px; }
+#logo h1 { font-size: 2.4em; text-transform: uppercase; margin: 12px 0 0 18px; }
+#logo a { font-family: Arial, Helvetica, sans-serif; color: white; text-shadow: black 1px 1px 1px; font-weight: normal; }
+#logo a span { font-weight: bold; color: #ffc500; }
+
+nav ul { float: right; margin-top: 5px; margin-right: 10px; }
+nav ul li { float: left; background-color: rgba(0, 0, 0, 0.55); margin-left: 1px; padding-top: 17px; }
+nav ul li a { display: block; height: 33px; padding: 0 20px; font-family: Arial, Helvetica, sans-serif; color: white; text-shadow: black 1px 1px 1px; font-weight: normal; font-size: 1.1em; font-weight: bold; text-transform: uppercase; }
+nav ul li a:hover { color: white; }
+nav ul li:hover { background: black; }
+nav ul li:active { background: rgba(0, 0, 0, 0.65); }
+
+.on { background: black; }
+
+img.innovator { margin-top: -13px; }
+
+#mastQuote h2 { font-family: Arial, Helvetica, sans-serif; color: white; text-shadow: black 1px 1px 1px; font-weight: normal; color: white; font-weight: bold; margin-top: 10px; }
+
+#phil-wrap { margin-top: 410px; background: rgba(0, 0, 0, 0.55); margin-left:0px;width:920px;padding-right:10px;}
+
+#philosophy { padding: 0 0 10px 20px; margin: 0px !important; }
+#philosophy h3 { line-height: 0.5; font-family: Arial, Helvetica, sans-serif; color: white; text-shadow: black 1px 1px 1px; font-weight: normal; font-size: 2em; font-weight: bold; margin-bottom: 30px; padding-top: 20px; }
+#philosophy li { float: left; display: block; width: 150px; margin-right: 35px; }
+#philosophy p { font-family: Arial, Helvetica, sans-serif; color: white; text-shadow: black 1px 1px 1px; font-weight: normal; font-size: 1.5em; padding: 14px 0 0 0; }
+
+#home-videos { margin: 0 -20px 0 0px; padding: 0 0 20px 0; float: right !important; }
+#home-videos h3 { line-height: 0.5; font-family: Arial, Helvetica, sans-serif; color: white; text-shadow: black 1px 1px 1px; font-weight: normal; font-size: 2em; font-weight: bold; padding: 20px 0 10px 0; position: relative; left: 5px; }
+#home-videos a { position: relative; left: 5px; }
+
+/* blog page */
+#blogtitle { font-size: 5.4em; text-transform: uppercase; text-align: center; padding: 35px 0 100px 20px; }
+
+#blog-page p { line-height: 1.6em; }
+
+.post { padding-right: 50px; }
+
+.post-title { float: left; display: block; width: 500px; }
+
+.date { font-weight: bold; font-size: 1.6em; color: #ababab; float: left; padding-top: 3px; padding-left: 30px; display: block; height: 8px; }
+
+.author { clear: both; margin-top: -20px; }
+
+.more { float: right; margin-bottom: 20px; }
+
+.posted { margin-top: -10px; margin-bottom: 80px; }
+.posted a { color: #997600; }
+.posted a:hover { color: #e6b100; }
+
+.prev, .next { font-size: 1.2em; font-weight: bold; text-transform: uppercase; }
+
+.next { float: right; margin-right: 50px; }
+
+#blogSidebar { background: #fff6d6; height: 100%; padding-bottom: 100px; }
+#blogSidebar h4 { padding: 20px 0 10px 20px; }
+#blogSidebar ul { padding: 0 0 20px 20px; }
+#blogSidebar li { color: #997600; font-size: 1.4em; margin-bottom: 5px; }
+#blogSidebar li a { color: black; }
+#blogSidebar li a:hover { color: #4d4d4d; }
+#blogSidebar ul:last-child p { font-size: 1.1em; margin-top: -3px; }
+
+/*Office Page */
+#theOffice { padding-bottom: 70px; }
+
+.office p { line-height: 1.6em; }
+.office .lrg-button { position: relative; top: 20px; }
+
+.submit { position: relative; top: 30px; }
+
+/* Projects Page */
+.projects { margin-top: 210px; }
+
+/* innovator page */
+.team h3 { margin-top: 40px; margin-bottom: 15px; margin-left: 20px; }
+
+blockquote { padding: 10px 10px 10px 15px; background: #d9d9d9; border: none; color: black; font-weight: bold; margin-top: 25px; }
+
+/* Opportunity page */
+#benefits { margin-top: 60px; }
+#benefits h3 { margin-bottom: 20px; }
+#benefits p { line-height: 1.6em; }
+
+.square { color: #ffc500; font-size: 1.4em; }
+.square li { margin-bottom: 10px; }
+
+#mastQuote .lrg-button { position: relative; top: 30px; }
+
+
+/* Media Page */
+.news { background: #fff6d6; }
+.news ul { /*padding-left:20px;*/ padding-bottom:10px; }
+.news h3 { padding:16px 20px 0 20px; }
+.morevids li { float:left; }
+.morevids li:first-child { margin-right:20px; }
+.twitter span { color:#997600; }
+.twitter p { line-height:1.6em; }
+.twitter li { padding-bottom:20px; }
+
+
+/* Contact Page */
+#contact-page p { font-size:1.0em; }
+.emailus { margin-top:80px; }
+#directions p { font-size:1.4em; }
+
+/* listings page */
+#oppTitle { margin-top: 40px; }
+
+#gray { background: #4d4d4d; margin-left: 0; width: 940px; padding: 10px 0; }
+#gray h4 { font-size: 1.6em; color: white; }
+
+.listing { background: #fff9e5; margin-left: 0; margin-top: -20px; padding: 16px 25px 0 0; width: 913px; border: solid 1px #cccccc; }
+
+#footer-wrap { background: rgba(0, 0, 0, 0.85); width: 100%; height: 50px; position: fixed; bottom: 0; z-index: 1000; } 
+/*#footer-wrap { background: rgba(0, 0, 0, 0.85); width: 100%; height: 50px; position: static; bottom: 0; z-index: 1000; }*/
+
+footer ul { padding: 16px 0px 0px 20px; float: left; }
+footer ul li { float: left; margin-right: 30px; }
+footer ul li a { font-family: Arial, Helvetica, sans-serif; color: white; text-shadow: black 1px 1px 1px; font-weight: normal; font-size: 1em; font-weight: bold; text-transform: uppercase; }
+footer ul li a:hover { color: #cccccc; }
+footer ul li a:active { color: #999999; }
+footer p { font-family: Arial, Helvetica, sans-serif; color: white; text-shadow: black 1px 1px 1px; font-weight: normal; font-weight: bold; font-size: 1.1em; }
+footer section { float: left; margin-left: 135px; height: 50px; }
+
+#phone { padding-top: 10px; }
+
+#email { margin-top: -21px; }
+
+#footerContact { float: right; margin: 12px 29px 0 0; }
+
+/* IE 7 Fixes */
+.ie7 { background: black; }
+
+.ie8 #sizer	{ z-index:-100; }
+
+.ie8 #philosophy { padding-bottom: 35px; }
+
+.ie8 #philosophy, .ie7 #philosophy, .ie8 #logo, .ie7 #logo, .ie8 nav ul li a, .ie7 nav ul li a, .ie8 #home-videos, .ie7 #home-videos { background:transparent url(../images/transblack.png) 0 0 repeat !important; }
+
+.ie7 #footer-wrap, .ie8 #footer-wrap { background:transparent url(../images/transblack-dark.png) 0 0 repeat !important; width:100%; padding-left:10px;}
+
+.ie7 #logo { padding-right:102px; }
+
+.ie8 nav ul li { margin: 0 0 0 1px; padding: 0;  background-color:transparent;}
+
+.ie nav ul li { background-color:transparent; }
+
+.ie nav ul li a { background:transparent url(../images/transblack.png) 0 0 repeat !important; }
+
+.ie nav ul li a:hover { background:black !important; }
+
+.ie8 nav ul li a { margin:0; padding-top: 15px; padding-bottom:5px;} 
+
+.ie8 .on { background:black; }
+
+.ie #buttons li { background-image: url(../images/transblack.png) 0 0 repeat; }
+
+.ie #logo, .ie nav li, .ie nav li a, .ie #philosophy, .ie #home-videos { background-color: black; z-index: 10000;}
+
+.ie #buttons li.activeButton { background-color: black; }
+
+.ie nav li { padding-top: 0; }
+custom.css
+.ie nav li a { height: 30px; padding-top:20px;}
+
+.ie #home-videos img { padding-bottom: 25px; }
+
+.ie .background-image { position: fixed !important; }
+
+.ie .post .author { margin-top: 0px; }
+
+.ie #interested .sm-button { height: 20px !important; }
+
+/* Firefox 3 */
+.ff3 .post .date { float: right; margin-top: -28px; }
+
+.ff3 .next { margin-top: -12px; }
+
+.ff .post .date { margin-top: -32px; }
+
+/* Firefox 3 */
+.ff3 input { width: 200px; }
+
+.ff3 #email-input, #email-input { position: relative; top: 21px; }
+
+.ff3 .next { margin-top: 0px; }
+
+/* Windows Chrome */
+.windows-chrome .post .date { float: right; margin-top: -28px; }
+
+/* Windows-Safari */
+.windows-safari .post .date { float: right; margin-top: -28px; }
+
+/* My Suff */
+#inline ul {
+  display: inline-block;
+}

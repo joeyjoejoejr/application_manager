@@ -1,28 +1,37 @@
-<h2>Application</h2>
-<b>Interests:</b>
+<h2>Application for <%= "#{@user.first_name} #{@user.last_name}" %></h2>
+<div class="eight columns">
+<h3>Interests</h3>
 <ul>
   <% @user.application.interests.each do |interest| %>
     <li><%= interest.name %></li>
   <% end %>
 </ul>
 <table class = "app_table">
+  <thead>
+  <tr><th colspan = '6'><b>Personal Information</b></th></tr>
+  </thead>
   <tr>
-    <td id = "label">Address</td><td><%= @user.application.address %></td>
+    <td id = "label" colspan = "2"><b>Address</b></td>
+    <td colspan = '4'><%= @user.application.address %></td>
   </tr>
   <tr>
-    <td id = "label">City:</td><td><%= @user.application.city %></td>
-    <td id = "label">State:</td><td><%= @user.application.state %></td>
-    <td id = "label">Zip:</td><td><%= @user.application.zip_code %></td>
+    <td id = "label"><b>City:</b></td><td><%= @user.application.city %></td>
+    <td id = "label"><b>State:</b></td><td><%= @user.application.state %></td>
+    <td id = "label"><b>Zip:</b></td><td><%= @user.application.zip_code %></td>
   </tr>
   <tr>
-    <td if = Label>Phone:</td><td><%= @user.application.phone_number %></td>
+    <td colspan = '2' id = Label><b>Phone:</b></td>
+    <td colspan = '2'><%= @user.application.phone_number %></td>
+    <td colspan = '2'><%= @user.email %>
   </tr>
 </table>
 
 <h3>Education</h3>
   <% @user.application.schools.each do |school| %>
     <table class = "school_tabel">
-      <tr><td><b>Type:</b></td><td><%= school.school_type %></td></tr>
+      <thead>
+        <tr><th colspan= '3'><b><%= school.school_type %></b></th></tr>
+      </thead>
       <tr><td><b>Name:</b></td><td><%= school.name %></td></tr>
       <tr><td><b>Major:</b></td><td><%= school.major %></td></tr>
       <tr>
@@ -33,25 +42,25 @@
 <h3>Employment</h3>
 <% @user.application.jobs.each do |job| %>
     <table class = "job_tabel">
-      <tr><td><b>Organization:</b></td><td><%= job.organization %></td></tr>
-      <tr><td><b>Responsibilities:</b></td></tr>
-      <tr><td><%= job.responsibilities %></td></tr>
-      <tr>
+      
+      <thead><th colspan = '1'><b>Organization:</b></th>
+          <th colspan = '3'><%= job.organization %></th>
+      </thead>
+      <tr><td colspan = '4'><b>Responsibilities:</b></td></tr>
+      <tr><td colspan = '4'><%= job.responsibilities %></td></tr>
       <td><b>Start: </b></td><td><%= job.start_date %></td>
       <td><b>End: </b></td><td><%= job.end_date %></td>
       </tr>
     </table>
   <% end %>
-<div class="questions">
+</div>
+<div class="eight columns">
 <h3>Questions</h3>
-<p><%= question1 %></p>  
-<p><%= text_area_tag :answer1, @user.application.answer1, :size => "40x15", 
-                      :disabled => "true"  %></p>
-<p><%= question2 %></p>  
-<p><%= text_area_tag :answer2, @user.application.answer2, :size => "40x15", 
-                      :disabled => "true"  %></p>
-<p><%= question3 %></p>  
-<p><%= text_area_tag :answer3, @user.application.answer3, :size => "40x15", 
-                      :disabled => "true"  %></p>
+<p><b><%= question1 %></b></p>  
+<p><%= @user.application.answer1 %></p>
+<p><b><%= question2 %><b></p>  
+<p><%= @user.application.answer2 %></p>
+<p><b><%= question3 %></b></p>  
+<p><%= @user.application.answer3 %></p>
 </div>
 
