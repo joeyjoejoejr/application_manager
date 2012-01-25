@@ -28,7 +28,7 @@
   <% @user.application.schools.each do |school| %>
     <table class = "school_tabel">
       <thead>
-        <tr><th colspan= '3'><b><%= school.school_type %></b></th></tr>
+        <tr><th align = 'left' colspan= '3'><b><%= school.school_type %></b></th></tr>
       </thead>
       <tr><td><b>Name:</b></td><td><%= school.name %></td></tr>
       <tr><td><b>Major:</b></td><td colspan = 2><%= school.major %></td></tr>
@@ -41,7 +41,7 @@
 <% @user.application.jobs.each do |job| %>
     <table class = "job_tabel">
       
-      <thead><th colspan = '1'><b>Organization:</b></th>
+      <thead><th align = 'left' colspan = '1'><b>Organization:</b></th>
           <th colspan = '3'><%= job.organization %></th>
       </thead>
       <tr><td colspan = '4'><b>Responsibilities:</b></td></tr>

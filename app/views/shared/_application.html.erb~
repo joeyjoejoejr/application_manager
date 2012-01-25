@@ -57,8 +57,8 @@
 <p><b><%= question1 %></b></p>  
 <p><pre><%= @user.application.answer1 %></pre></p>
 <p><b><%= question2 %></b></p>  
-<pre><%= @user.application.answer2 %></pre>
+<p><pre><%= @user.application.answer2 %></pre></p>
 <p><b><%= question3 %></b></p>  
-<pre><%= @user.application.answer3 %></pre>
+<p><pre><%= @user.application.answer3 %></pre></p>
 </div>
 
