@@ -15,6 +15,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :production do
+  gem 'pg'
+end
+
 gem 'jquery-rails'
 gem 'execjs'
 gem 'therubyracer'
@@ -36,7 +40,7 @@ gem 'wkhtmltopdf-binary'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem "sqlite3-ruby", :require => "sqlite3"
+gem "sqlite3-ruby", :group => [:development,:test]
 gem "rspec-rails", ">= 2.4.1", :group => [:development]
 group :development do
   gem 'guard'
