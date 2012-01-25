@@ -14,4 +14,5 @@
 
 class Job < ActiveRecord::Base
   belongs_to :application
+  attr_accessible :organization, :start_date, :end_date, :responsibilites
 end

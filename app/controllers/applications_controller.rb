@@ -19,6 +19,7 @@ class ApplicationsController < ApplicationController
     @user = current_user
     @application = @user.build_application(params[:application])
     if @user.application.save
+      flash[:success] = "Application Created."
       redirect_to @application
     else
       @title = "New Application"
@@ -36,6 +37,7 @@ class ApplicationsController < ApplicationController
     @application = Application.find(params[:id])
     @user = User.find_by_id(@application.user_id)
     if @application.update_attributes(params[:application])
+			flash[:success] = "Application Updated"
 			redirect_to @user
 		else
 			@title = 'Edit Application'
@@ -45,6 +47,7 @@ class ApplicationsController < ApplicationController
 
   def destroy
     @application = Application.find(params[:id]).destroy
+    flash[:success] = "Application deleted."
     @user = User.find_by_id(@application.user_id)
     redirect_to @user
   end

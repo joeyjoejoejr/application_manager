@@ -1,6 +1,6 @@
-<h2>All applicants</h2>
 <%= will_paginate %>
   <% if current_user.admin? %>
+  <h2>All applicants</h2>
     <table class="users">
       <thead><th colspan = '4'>Users</th></thead>
     <% @users.each do |user| %>
@@ -16,7 +16,7 @@
         <td>
             
             <%= link_to image_tag("pdfIcon.png", :border=>0), user_path(user, 
-            :format => "pdf"), :class => "button left small" if user.application %>
+            :format => "pdf"), :class => "button left" if user.application %>
         </td>
       </tr>
     <% end %>
@@ -24,5 +24,4 @@
   <% else %>
     <p><%= link_to 'Your Application', user_path(current_user) %></p>
   <% end %>
-  <%= current_user.admin?.to_s %>
 <%= will_paginate %>

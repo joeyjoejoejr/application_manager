@@ -8,6 +8,7 @@ end
 
 When /^Fill out the ([^"]*) application form$/ do |age|
   Interest.create(:name => "Semester Internship")
+  purs body
   if age == "new"
     click_link "Create an Application"
     address = "123 Main St"
@@ -15,7 +16,6 @@ When /^Fill out the ([^"]*) application form$/ do |age|
     click_link "Edit Application"
     address = "321 Main St"
   end
-  save_and_open_page
   fill_in "Address",		:with => address
   fill_in "State",			:with => "NC"
   fill_in "City",				:with => "Anywhere"

@@ -8,7 +8,7 @@
 </ul>
 <table class = "app_table">
   <thead>
-  <tr><th colspan = '6'><b>Personal Information</b></th></tr>
+  <tr><th  align = 'left' colspan = '6'><b>Personal Information</b></th></tr>
   </thead>
   <tr>
     <td id = "label" colspan = "2"><b>Address</b></td>

@@ -18,7 +18,7 @@ module NavigationHelpers
       edit_user_path(user)
 
     when /User's profile page$/i
-      user_path(User.first)
+      user_path(user)
       
     when /the user list/
       users_path

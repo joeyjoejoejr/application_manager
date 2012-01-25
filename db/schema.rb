@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120124064944) do
+ActiveRecord::Schema.define(:version => 20120125064325) do
 
   create_table "applications", :force => true do |t|
     t.integer  "user_id"
@@ -36,11 +36,15 @@ ActiveRecord::Schema.define(:version => 20120124064944) do
     t.datetime "updated_at"
   end
 
+  add_index "interest_checkers", ["interest_id", "application_id"], :name => "index_interest_checkers_on_interest_id_and_application_id"
+
   create_table "interests", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "interests", ["name"], :name => "index_interests_on_name", :unique => true
 
   create_table "jobs", :force => true do |t|
     t.integer  "application_id"
@@ -51,6 +55,8 @@ ActiveRecord::Schema.define(:version => 20120124064944) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "jobs", ["application_id"], :name => "index_jobs_on_application_id"
 
   create_table "schools", :force => true do |t|
     t.string   "school_type"
@@ -63,6 +69,8 @@ ActiveRecord::Schema.define(:version => 20120124064944) do
     t.datetime "updated_at"
   end
 
+  add_index "schools", ["application_id"], :name => "index_schools_on_application_id"
+
   create_table "users", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -73,5 +81,7 @@ ActiveRecord::Schema.define(:version => 20120124064944) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end

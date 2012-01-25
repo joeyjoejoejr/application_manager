@@ -12,7 +12,6 @@ Interest.create(:name => "Permanant Job")
 Interest.create(:name => "Support for Developing an Idea")
 
 #Admin User
-user = User.create(:first_name => "Admin", :last_name => "User", 
+User.create(:first_name => "Admin", :last_name => "User", 
             :email => "admin@example.com", :password => "foobar", 
             :password_confirmation => "foobar")
-user.toggle!(:admin)

@@ -91,6 +91,4 @@ a:link:after, a:visited:after {
   content: " (http://www.yourdomain.com" attr(href) ") ";
 } */
 
-#pdf {
-  display: none;
-  }
+

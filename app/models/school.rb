@@ -15,4 +15,5 @@
 
 class School < ActiveRecord::Base
 	belongs_to :application
+	attr_accessible :school_type, :name, :major, :degree, :date_recieved
 end

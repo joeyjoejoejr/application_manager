@@ -9,7 +9,7 @@ module ApplicationHelper
 	end
 	
 	def question1
-   @question1  = "8 Rivers looks for individuals who can identify and solve important problems. What about you would indicate that you would be a good problem identifier and solver? Use anything you consider relevant, including quantitative measures (test scores, GPA, profit margins) and qualitative results (business, non-profit or other)."
+    @question1  = "8 Rivers looks for individuals who can identify and solve important problems. What about you would indicate that you would be a good problem identifier and solver? Use anything you consider relevant, including quantitative measures (test scores, GPA, profit margins) and qualitative results (business, non-profit or other)."
 	end
 	
 	def question2

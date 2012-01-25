@@ -2,10 +2,12 @@
 	 <div class="fields eight columns">
 	 	<h3>Interests</h3>
   	<%= hidden_field_tag "application[interest_ids][]", nil%>
+  	<div class = "checkboxes">
   	<% Interest.all.each do |interest| %>
+    	<%= label_tag dom_id(interest), interest.name %>
     	<%= check_box_tag "application[interest_ids][]", interest.id, @application.interest_ids.include?(interest.id),  id: dom_id(interest) %>
-   	 	<%= label_tag dom_id(interest), interest.name %><br/>
   	<% end %>
+  	</div>
 		<h3>Personal Information</h3>
 	 <div class="fields">
 	  <%= f.label :address %><br />
@@ -33,7 +35,6 @@
  	   	<h3>Employment</h3>
      	<%= f.fields_for :jobs %>
      	<%= f.link_to_add 'Add an Employer', :jobs, :class => "button small" %>
-
     </div>
     <div class="eight columns">
     <h3>Questions</h3>
