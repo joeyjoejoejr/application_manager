@@ -6,6 +6,7 @@
 		<% if request_from_pdfkit? %>
 			<style type="text/css">
 				<%= File.read(Rails.root.join("public","stylesheets","customprint.css")) %>
+				<%= File.read(Rails.root.join("public","stylesheets","blueprint","print.css")) %>
 			</style>
 		<% else %>
 			<%= javascript_include_tag :application %>
@@ -13,6 +14,7 @@
 		  <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
 		  <%= stylesheet_link_tag 'n_global', :media => 'screen' %>
 		  <%= stylesheet_link_tag 'custom', :media => 'screen' %>
+		  <%= stylesheet_link_tag 'mycustom', :media => 'screen' %>
     <% end %>
 	</head>
 	<body>
