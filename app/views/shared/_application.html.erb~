@@ -1,11 +1,9 @@
 <h2>Application for <%= "#{@user.first_name} #{@user.last_name}" %></h2>
 <div class="eight columns">
 <h3>Interests</h3>
-<ul>
   <% @user.application.interests.each do |interest| %>
-    <li><%= interest.name %></li>
+    <p><%= interest.name %></p>
   <% end %>
-</ul>
 <table class = "app_table">
   <thead>
   <tr><th  align = 'left' colspan = '6'><b>Personal Information</b></th></tr>
@@ -47,7 +45,7 @@
           <th colspan = '3'><%= job.organization %></th>
       </thead>
       <tr><td colspan = '4'><b>Responsibilities:</b></td></tr>
-      <tr><td colspan = '4'><%= job.responsibilities %></td></tr>
+      <tr><td colspan = '4'><p><%= job.responsibilities %></p></td></tr>
       <td><b>Start: </b></td><td><%= job.start_date %></td>
       <td><b>End: </b></td><td><%= job.end_date %></td>
       </tr>

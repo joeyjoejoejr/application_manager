@@ -45,7 +45,7 @@
           <th colspan = '3'><%= job.organization %></th>
       </thead>
       <tr><td colspan = '4'><b>Responsibilities:</b></td></tr>
-      <tr><td colspan = '4'><%= job.responsibilities %></td></tr>
+      <tr><td colspan = '4'><pre><%= job.responsibilities %></pre></td></tr>
       <td><b>Start: </b></td><td><%= job.start_date %></td>
       <td><b>End: </b></td><td><%= job.end_date %></td>
       </tr>
@@ -55,10 +55,10 @@
 <div class="eight columns">
 <h3>Questions</h3>
 <p><b><%= question1 %></b></p>  
-<p><%= @user.application.answer1 %></p>
+<p><pre><%= @user.application.answer1 %></pre></p>
 <p><b><%= question2 %><b></p>  
-<p><%= @user.application.answer2 %></p>
+<p><pre><%= @user.application.answer2 %></pre></p>
 <p><b><%= question3 %></b></p>  
-<p><%= @user.application.answer3 %></p>
+<p><pre><%= @user.application.answer3 %></pre></p>
 </div>
 
