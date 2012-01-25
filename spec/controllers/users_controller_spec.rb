@@ -34,10 +34,10 @@ describe UsersController do
 				response.should have_selector("title", :content => "All Applicants")
 			end
 			
-			it "should have an element for each user" do
+			it "should have an link to the user's application page'" do
         get :index
         @users[0..2].each do |user|
-          response.should have_selector("li", :content => user.first_name)
+          response.should have_selector("a", :content => "Your Application")
         end
       end
 

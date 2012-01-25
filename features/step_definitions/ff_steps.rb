@@ -2,9 +2,8 @@
 Given /^that I ([^"]*) signed in$/ do |f|
   if f == "am"
   	visit signin_path
-  	sign_in(user)
-  else
-  	visit signout_path
+  	puts Factory(:user)
+  	sign_in(Factory(:user))
   end
 end
 

@@ -15,11 +15,16 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :production do
+  gem 'pg'
+end
+
 gem 'jquery-rails'
 gem 'execjs'
 gem 'therubyracer'
 gem 'will_paginate', '3.0.pre4'
 gem 'nested_form', :git => "git://github.com/ryanb/nested_form.git"
+gem 'pdfkit'
 
 
 # To use ActiveModel has_secure_password
@@ -34,7 +39,7 @@ gem 'nested_form', :git => "git://github.com/ryanb/nested_form.git"
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem "sqlite3-ruby", :require => "sqlite3"
+gem "sqlite3-ruby", :group => [:development,:test]
 gem "rspec-rails", ">= 2.4.1", :group => [:development]
 group :development do
   gem 'guard'

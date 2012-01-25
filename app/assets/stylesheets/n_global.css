@@ -1,0 +1,416 @@
+/*	--------------------------------------------------
+	Global Reset
+	-------------------------------------------------- */
+	html, body { margin: 0; padding: 0; }
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, img, small, strike, strong, em, sub, sup, tt, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td, section { margin: 0; padding: 0; border: 0; font-weight: normal; font-style: normal; font-size: 100%; line-height: 1; font-family: inherit; text-align: left; }
+	table { border-collapse: collapse; border-spacing: 0; }
+	ol, ul { list-style: none; }
+	/* HTML5 Fixes */
+	header, section, nav, footer { display: block; }
+
+/*	--------------------------------------------------
+	Body
+	-------------------------------------------------- */
+	body { background: #fff; font-family: "Helvetica Neue", Helvetica, "Arial", Verdana, sans-serif; font-size: 13px; text-shadow: 0 0 1px rgba(0,0,0,0.01); color: #555; position: relative; }
+	
+	@media only screen and (max-device-width:480px) { body { -webkit-text-stroke:0 black; } } /* Undo the fix for Mobile Safari */
+	body.ff2 { opacity: .99; } /* Make our type in FF look uber sexah */
+
+/*	--------------------------------------------------
+	Links
+	-------------------------------------------------- */
+	a { color: #555; text-decoration: none; outline: 0; line-height: inherit; }
+	a:hover { color: #777; }
+
+	a.muted, a.muted:visited { color: #777; }
+	a.muted:hover { color: #555; }
+	
+	h1 a, h1 a:visited, h2 a, h2 a:visited, h3 a, h3 a:visited { color: #333; text-decoration: none; }
+	h4 a, h4 a:visited, h5 a, h5 a:visited { text-decoration: none; line-height: inherit; font-weight: bold; }
+	h3 a:hover { color: auto; }
+	h4 a:hover, h5 a:hover { text-decoration: underline; }
+	p a, p a:visited { line-height: inherit; }
+
+/*	--------------------------------------------------
+	Typography
+	-------------------------------------------------- */
+	h1, h2, h3, h4, h5, h6 { color: #181818; font-weight: bold; }
+	h1 { font-size: 46px; line-height: 1; }
+	h2 { font-size: 30px; line-height: 1.2; margin: 0 0 9px; }
+	h3 { font-size: 21px; line-height: 1; margin: 3px 0 9px; }
+	h4 { font-size: 18px; line-height: 1.25; margin: 2px 0 3px; }
+	h5 { font-size: 14px; line-height: 18px; }
+	h6 { font-size: 12px; font-weight: normal; line-height: 18px; margin: 0 0 9px; }
+	
+	.underlined { border-bottom: solid 1px #ddd; padding-bottom: 4px; }
+
+	p { line-height: 17px; margin: 0 0 18px; }
+	p img { margin: 0; }
+	p.lead { font-size: 18px; line-height: 24px; margin: 0 0 18px; color: #777; }
+	
+	em { font-style: italic; line-height: inherit; }
+	strong { font-weight: bold; line-height: inherit; }
+	small { font-size: 80%; line-height: inherit; color: #999; font-weight: normal; }
+	
+	.rel { position: relative; }
+	
+/*	Blockquotes (props to @paulrobertlloyd for inspiration) -------------------- */
+	blockquote, blockquote p { font-size: 14px; line-height: 20px; color: #777; }
+	blockquote { margin: 0 0 18px; padding: 9px 20px 0 19px; border-left: 1px solid #ddd; }
+	blockquote.solid { background: #f5f5f5; }
+	blockquote p { margin: 0; padding: 0 0 9px; }
+	blockquote h5 { margin: 0; }
+	blockquote cite { display: block; padding: 0 0 9px 6px; font-size: 12px; color: #555; }
+	blockquote cite:before { content: "\2014 \0020"; }
+	blockquote cite a, blockquote cite a:visited { color: #555; }
+	blockquote cite a:hover { color: #555; text-decoration: none; }
+	
+	hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 17px 0 18px; height: 0; }
+	body.ie6 hr { margin: 8px 0 9px; }
+	
+	code, pre { font: 12px/18px "Monaco", "Courier New", "Courier", monospace; color: #e33100; }
+	
+	address { color: #333; line-height: 18px; margin: 0 0 18px; }
+	abbr, acronym { text-transform: uppercase; font-size: 90%; color: #222; border-bottom: 1px solid #ddd; cursor: help; }
+	abbr { text-transform: none; }
+
+
+/*	--------------------------------------------------
+	Lists
+	-------------------------------------------------- */
+	ul, ol { margin-bottom: 0; }
+	ul { list-style: none outside; }
+	ol { list-style: decimal; }
+	ol, ul.square, ul.circle, ul.disc { margin-left: 30px; }
+	ul.square { list-style: square outside; }
+	ul.circle { list-style: circle outside; }
+	ul.disc { list-style: disc outside; }
+	ul.large { font-size: 15px; }
+	ul ul, ol ol { margin-left: 30px; margin-top: 4px; margin-bottom: 5px; }
+	li { line-height: 18px; }
+	ul.large li { line-height: 21px; }
+
+	dt { line-height: 18px; font-weight: bold; color: #333; }
+	dd { margin: 0 0 18px; line-height: 18px; }	
+	
+/*	Code Lists -------------------- */
+	ol.code { background: #333; border: 0; margin: 0; padding: 18px; list-style: none; }
+	ol.code li { color: #fff; margin: 0; line-height: 18px; padding: 0; font-family: "Consolas", "Courier New", Monaco, Courier, monospace; }
+	ol.code li code { font-family: "Consolas", "Courier New", Monaco, Courier, monospace; font-size: 12px; line-height: inherit; color: inherit; }
+	ol.code .indent-1 { padding-left: 2em; }
+	ol.code .indent-2 { padding-left: 4em; }
+	ol.code .indent-3 { padding-left: 6em; }
+	ol.code li.selector { color: #39c; }
+	ol.code li.property { color: #f63; padding: 0 0 0 2em; }
+	ol.code li.property span.value, ol.code .class { color: #9c3; }
+	ol.code li.punctuate,
+	ol.code li.selector span.punctuate,
+	ol.code li.property span.punctuate { color: #999; }
+
+/*	--------------------------------------------------
+	Tables
+	-------------------------------------------------- */
+	table { background: #fff; width: 100%; margin: 0 0 18px; border: solid #ddd; border-width: 0 1px 1px 0; border-collapse: separate; -webkit-border-radius: 5px; -moz-border-radius: 5px; }
+	table thead { background: #555; }
+	table thead tr th,
+	table tbody tr td { font-size: 12px; line-height: 18px; }
+	table thead tr {  }
+	table thead tr th { padding: 8px 10px 9px; font-size: 14px; font-weight: bold; color: #fff; }
+	table tbody {  }
+	table tbody tr {  }
+	table tbody tr.even,
+	table tbody tr.alt { background: #f5f5f5; }
+	body.safari table tbody tr:nth-child(even) { background: #f5f5f5; }
+	table tbody tr td { color: #333; padding: 9px 10px; border-left: 1px solid #ddd; border-right: 1px solid #fff; vertical-align: top; }
+	/* Get fancy with rounded corners */
+	table thead tr th:first-child { -webkit-border-top-left-radius: 5px; -moz-border-radius: 3px 0 0 0; }
+	table thead tr th:last-child { -webkit-border-top-right-radius: 5px; -moz-border-radius: 0 3px 0 0; }
+	table tbody tr:last-child td:first-child { -webkit-border-bottom-left-radius: 5px; -moz-border-radius: 0 0 0 3px; }
+	table tbody tr:last-child td:last-child { -webkit-border-bottom-right-radius: 5px; -moz-border-radius: 0 0 3px 0; }
+	/* Style the tables a bit lighter */
+	table.alt { border-width: 1px 1px 1px 0; }
+	table.alt thead { background: #f5f5f5; }
+	table.alt thead tr th { color: #222; border-left: 1px solid #ddd; border-right: 1px solid #fff; }
+
+/*	--------------------------------------------------
+	Forms
+	-------------------------------------------------- */
+	form { margin: 0 0 18px; }
+	fieldset { margin-bottom: 8px; }
+	label { display: block; font-size: 13px; font-weight: bold; line-height: 18px; cursor: pointer; }
+	
+
+	input.input-text, input.password, textarea { display: block; background: #fff url(../images/backgrounds/input-bg.png) no-repeat 0 0; width: ; margin: 0px; padding: 3px 4px; border: 1px solid #bbb; -moz-border-radius: 2px; -webkit-border-radius: 2px; -webkit-box-shadow: 0 1px 1px #fff; font: 12px/18px "Arial", Helvetica, Verdana, sans-serif; text-shadow: 0 0 1px #fff; color: #777; }
+	body.ie input.input-text, body.ie input.password, body.ie textarea { padding: 3px 4px 6px; }
+	form select:focus, form input.input-text:focus, form textarea:focus { outline: none; }
+	/*input.input-text:focus, textarea:focus { outline: 0; color: #333; padding: 2px 3px; border: 2px solid #096bbd; }*/
+	input.input-file { display: block; margin-bottom: 8px; }
+	input.input-text.error, textarea.error { color: #e33100; padding: 2px 3px; border: 2px solid #e33100; }
+	
+	/* Super Awesome Brand New Mega Cool Inline Labels */
+	label.inlined { padding-left: 6px; font-weight: normal; font-size: 12px; opacity: 0.75; -webkit-transition: color 0.15s linear; position: relative; z-index: 100; top: 1px; }
+	label.inlined + input.input-text { margin-top: -21px; background-color: transparent; position: relative; z-index: 200; }
+	label.inlined.focus { color: #bbb; }
+	label.inlined.has-text { color: #fff; -webkit-transition-duration: 0.0s; }
+	form fieldset small { display: block; margin-top: 4px; }
+
+	/* Firefox 3.5 Sucks */
+	body.ff3 input.input-text { padding: 4px; }
+	body.ff3 input.input-text:focus { padding: 3px 3px; }
+
+	/* Text input and textarea sizes */
+	input.mini, textarea.mini { width: 90px; }
+	input.small, textarea.small { width: 120px; }
+	input.medium, textarea.medium { width: 330px; }
+	input.large, textarea.large { width: 570px; }
+	input.fluid, textarea.fluid { width: 700px; }
+	
+	input.grey, textarea.grey { background-color: #eee; margin-bottom: 10px; }
+
+	/* Sets of checkboxes and radio buttons */
+	ul.options { margin-bottom: 18px; }
+	ul.options li { padding: 0 0 3px; }
+	ul.options li label { font-size: 13px; font-weight: normal; }
+	ul.options li input.radio,
+	ul.options li input.checkbox {  }
+	/* Inline options */
+	ul.options.inline {  }
+	ul.options.inline li { display: inline; padding-right: 8px; }
+	ul.options.inline li.label { font-weight: bold; background: none; color: #333; text-transform: none; padding: 0; display: inline; font-size: 13px; }
+	ul.options.inline label { display: inline; }
+	
+	/* Actions (buttons and links) at the bottom of forms) */
+	fieldset.actions { margin: 9px 0 0; padding: 12px 0 13px; text-align: right; border-top: 1px solid #ddd; }
+	fieldset.actions * { display: inline-block; }
+
+	.button {
+		background: #000 url(../assets/misc/button-overlay.png) repeat-x;
+		display: inline-block;
+		padding: 5px 10px 6px;
+		color: #fff;
+		text-decoration: none;
+		font-weight: bold;
+		line-height: 1;
+		border-bottom: 1px solid #222;
+		position: relative;
+		cursor: pointer;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		-moz-box-shadow: 0 1px 3px #999;
+		-webkit-box-shadow: 0 1px 3px #999;
+		text-shadow: 0 -1px 1px #222;
+		-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+		-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+		text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+		border-bottom: 1px solid rgba(0,0,0,0.4);
+		border-top: 1px solid rgba(255,255,255,.3);
+	}
+	
+	.button.round { 
+		-moz-border-radius: 100px;
+		-webkit-border-radius: 100px;
+		border-radius: 100px;
+	}
+	
+	.button:active { top: 1px; }
+	
+	/* Sizes ---------- */
+	.small.button 		{ font-size: 11px; }
+	.medium.button 		{ font-size: 13px; }
+	.large.button 		{ font-size: 14px; padding: 8px 14px 11px; }
+	.xlarge.button 		{ font-size: 30px; padding: 12px 18px; }
+	 
+	/* Colors ---------- */
+	.blue.button			{ background-color: #3bbadf; 	}
+	.red.button				{ background-color: #CB3819; 	}
+	.pink.button 			{ background-color: #e525b6; 	}
+	.green.button 			{ background-color: #c6e437; 	}
+	.yellow.button			{ background-color: #ddb600; 	}
+	.gray.button			{ background-color: #aaa; 		}
+	
+	/* Hovers ---------- */
+	.button:hover 			{ background-color: #111; 		}
+	.blue.button:hover		{ background-color: #289bbd; 	}
+	.red.button:hover 		{ background-color: #a72f16; 	}
+	.pink.button:hover 		{ background-color: #bf1f98; 	}
+	.green.button:hover 	{ background-color: #deff45;	}
+	.yellow.button:hover 	{ background-color: #d1ac00; 	}
+	.gray.button:hover 		{ background-color: #888; 		}
+
+	
+/*	--------------------------------------------------
+	Structure
+	-------------------------------------------------- */
+
+	/*	Container ------------------------------------- */
+	div.container { position: relative; width: 940px; margin: 0 auto; padding: 0; }
+	body.ie8 div.container { position: static; }
+	
+	
+/*	--------------------------------------------------
+	Grid
+	-------------------------------------------------- */
+	.column-row { margin: 0 0 18px -20px; width: 960px; }
+	.column, .columns { float: left; display: inline; margin: 0 0 0 20px; }
+
+	#contentMain { width: 540px; }
+	#contentSec { width: 360px; margin-left: 40px; }
+
+	.one 					{ width: 40px; }
+	.two 					{ width: 100px; }
+	.three 					{ width: 160px; }
+	.four 					{ width: 220px; }
+	.five 					{ width: 280px; }
+	.six 					{ width: 340px; }
+	.seven 					{ width: 400px; }
+	.eight 					{ width: 460px; }
+	.nine 					{ width: 520px; }
+	.ten 					{ width: 580px; }
+	.eleven 				{ width: 640px; }
+	.twelve 				{ width: 700px; }
+	.thirteen 				{ width: 760px; }
+	.fourteen 				{ width: 820px; }
+	.fifteen 				{ width: 880px; }
+	.sixteen 				{ width: 940px; }
+	.one-half 				{ width: 420px; padding-right: 10px; }
+	.one-third 				{ width: 300px; }
+	.two-thirds 			{ width: 580px; }
+	.ten .column-row		{ width: 600px; }
+	.eleven .column-row 	{ width: 660px; }
+	.twelve .column-row 	{ width: 760px; }
+	
+	.offset-by-one-half 	{ margin-left: 50px; }
+	.offset-by-one 			{ margin-left: 80px; }
+	.offset-by-two 			{ margin-left: 140px; }
+	.offset-by-three 		{ margin-left: 200px; }
+	.offset-by-four 		{ margin-left: 260px; }
+	.offset-by-five 		{ margin-left: 320px; }
+	.offset-by-six 			{ margin-left: 380px; }
+	.offset-by-seven 		{ margin-left: 440px; }
+	.offset-by-eight 		{ margin-left: 500px; }
+	.offset-by-nine 		{ margin-left: 560px; }
+	.offset-by-ten 			{ margin-left: 620px; }
+	.offset-by-eleven 		{ margin-left: 680px; }
+	.offset-by-twelve 		{ margin-left: 740px; }
+	.offset-by-thirteen 	{ margin-left: 800px; }
+	.offset-by-fourteen 	{ margin-left: 880px; }
+		
+	.last { margin: 0; }
+	
+	/* Clear the columns automagically, thanks @kneath */
+	.column-row:after, .clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+	* html .column-row, * html .clearfix { height: 1%; }
+	.column-row, .clearfix { display: inline-block; }
+	.column-row, .clearfix { display: block; }
+	
+		
+/*	----------------------------------------
+	Alerts & Errors
+	---------------------------------------- */
+	/* Plain, Simple Alert */
+	p.warning, p.error, p.success, p.info { margin: 0 0 18px; padding: 9px 15px; -webkit-border-radius: 6px; -moz-border-radius: 6px; color: #fff !important; text-shadow: 0 0 1px rgba(0,0,0,0.01); }
+	p.warning a, p.error a, p.success a, p.info a { color: #fff !important; font-weight: bold; text-decoration: underline; }
+
+	/* Warnings */
+	p.warning { background-color: #f09f00;  }
+	p.warning small { color: #fff; }
+
+	/* Errors */
+	p.error { background-color: #9a271f; color: #fff; }
+	p.error strong { color: #fff; }
+	p.error small { color: #fff; }
+
+	/* Success */
+	p.success { background-color: #4ca200; color: #fff; }
+	p.success strong { color: #fff; }
+	p.success small { color: #fff; }
+	
+	p.info { background-color: #555; color: #fff; }
+	p.info small { color: #fff; }
+	
+/*	----------------------------------------
+	Avatars
+	---------------------------------------- */
+	div.avatar.medium img { width: 40px; height: 40px; }
+	div.avatar.small img { width: 28px; height: 28px; }
+	
+
+/*	--------------------------------------------------
+	Custom Labels
+	-------------------------------------------------- */
+	.label { background: #999; display: inline-block; padding: 3px 5px 4px; color: #fff; font-size: 11px; font-weight: bold; text-decoration: none; text-transform: uppercase; line-height: 1; -webkit-border-radius: 3px; -moz-border-radius: 3px; text-shadow: 0 0 1px transparent; }
+	.label:hover { text-decoration: none; color: #fff; }
+	body.ff2 .label { -moz-border-radius: 0; }
+	
+	/* Color colors */
+	.label.green { background: #a5c941; text-shadow: 0 0 1px #a5c941; }
+	.label.blue { background: #2daebf; text-shadow: 0 0 1px #2daebf; }
+	.label.magenta { background: #a9014b; text-shadow: 0 0 1px #a9014b; }
+	.label.red { background: #e33100; text-shadow: 0 0 1px #e33100; }
+	.label.orange { background: #ff5c00; text-shadow: 0 0 1px #ff5c00; }
+	.label.yellow { background: #fc9200; text-shadow: 0 0 1px #fc9200; }
+
+	/* Other Basics */
+	.label.black { background: #333; text-shadow: 0 0 1px #222; }
+	.label.white { background: #fff; padding: 0 3px 1px; border: 1px solid #ddd; color: #333; text-shadow: 0 0 1px #fff; }
+	
+
+/*	--------------------------------------------------
+	Modals
+	-------------------------------------------------- */
+		
+.modal { 
+	position: absolute; 
+	height: 100%;
+	width: 100%;
+	background: #000;
+	background: rgba(0,0,0,.8);
+	z-index: 100;
+	display: none;
+	}
+
+.modal>span {
+	display: block;
+	margin: 100px auto 0;
+	width: 400px;
+	background: #eee;
+	position: relative;
+	z-index: 101;
+	padding: 20px 20px 24px 20px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+	-box-shadow: 0 0 10px rgba(0,0,0,.4);
+	}
+	
+.modal.small>span 		{ width: 200px; }
+.modal.medium>span 		{ width: 400px; }
+.modal.large>span 		{ width: 600px; }
+.modal.xlarge>span 		{ width: 800px; }
+
+.modal .close {
+	font-size: 22px;
+	line-height: .5;
+	position: absolute;
+	top: 5px;
+	right: 8px;
+	color: #aaa;
+	text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+	font-weight: bold;
+	cursor: pointer;
+	} /* Close button entity is &#215; */
+
+/*Example markup
+
+	<div class="modal"><span>
+		<h1>Greetings</h1>
+		<p>Something awesome is happening</p>
+		<a class="close">&#215;</a>
+	</span></div>
+
+*/
+	
+	

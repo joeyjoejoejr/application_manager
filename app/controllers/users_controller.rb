@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-	before_filter :authenticate, :only => [:show, :edit, :update, :destroy]
+	before_filter :authenticate, :only => [:index, :show, :edit, :update, :destroy]
 	before_filter :correct_user, :only => [:show, :edit, :update]
-	before_filter :admin_user, :only => [:destroy, :index]
+	before_filter :admin_user, :only => [:destroy,]
 	before_filter :signedin_user, :only => [:new, :create]
 	
 	def index
@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(params[:user])
   		if @user.save
+  			flash[:success] = "Welcome to the 8 Rivers!"
   			sign_in @user
   			redirect_to @user
  	 	else
@@ -40,6 +41,7 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 		if @user.update_attributes(params[:user])
+			flash[:success] = "Profile updated."
 			redirect_to @user
 		else
 			@title = 'Edit user'
@@ -49,6 +51,7 @@ class UsersController < ApplicationController
 	
 	def destroy
 		user = User.find(params[:id])
+		flash[:success] = "User destroyed."
 		user.destroy unless user == current_user
 		redirect_to users_path
 	end
@@ -62,7 +65,7 @@ class UsersController < ApplicationController
 		
 		def correct_user
 			@user = User.find(params[:id])
-			redirect_to root_path unless @user == current_user
+			redirect_to root_path unless @user == current_user || current_user.admin?
 		end
 		
 		def admin_user

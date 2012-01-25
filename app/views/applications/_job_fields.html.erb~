@@ -1,19 +1,21 @@
-<div class = "job_fields">
 	<div class = "fields">
 		<%= f.label :organization, "Organization " %>
 		<%= f.text_field :organization %>
 	</div> 
 	<div class = "fields">
 	  <%= f.label :start_date, "Start Date" %>
-   	<%= f.date_select(:start_date, :order => [:month,:year]) %>
+   	<%= f.date_select(:start_date, { :order => [:month,:year],
+   	                                 :start_year=> Time.now.year - 50,
+   	                                 :end_year => Time.now.year }) %>
 	</div>
 	<div class = "fields">
 	  <%= f.label :end_date, "End Date " %>
-   	<%= f.date_select(:end_date, :order => [:month,:year]) %>
+   	<%= f.date_select(:end_date, { :order => [:month,:year],
+   	                               :start_year=> Time.now.year - 50,
+   	                               :end_year => Time.now.year }) %>
 	</div>
 	<div class = "fields">
-		<%= f.label :responsibilities, "Responsibilities" %>
+		<%= f.label :responsibilities, "Responsibilities" %> <br />
 		<%= f.text_area :responsibilities, :rows => 4 %>
 	</div> 
-	<%= f.link_to_remove "remove" %>
- </div>
+	<%= f.link_to_remove "remove", :class => "small button" %>

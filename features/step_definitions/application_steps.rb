@@ -8,6 +8,7 @@ end
 
 When /^Fill out the ([^"]*) application form$/ do |age|
   Interest.create(:name => "Semester Internship")
+  puts body
   if age == "new"
     click_link "Create an Application"
     address = "123 Main St"

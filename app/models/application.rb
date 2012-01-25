@@ -1,6 +1,7 @@
 class Application < ActiveRecord::Base
 attr_accessible :address , :city, :state, :zip_code, :phone_number, 
-								:interest_ids, :schools_attributes, :jobs_attributes
+								:interest_ids, :schools_attributes, :jobs_attributes, :answer1,
+								:answer2, :answer3
 
 belongs_to :user
 has_many :jobs, :dependent => :destroy
@@ -31,5 +32,8 @@ end
 #  state        :string(255)
 #  zip_code     :integer
 #  phone_number :string(255)
+#  answer1      :text
+#  answer2      :text
+#  answer3      :text
 #
 

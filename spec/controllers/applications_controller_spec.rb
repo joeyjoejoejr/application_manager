@@ -62,7 +62,7 @@ describe ApplicationsController do
         
         it "should have the user's information" do
           get :new
-          response.should have_selector("h1", :content => "#{@user.first_name} #{@user.last_name}")
+          response.should have_selector("h2", :content => "#{@user.first_name} #{@user.last_name}")
         end
         
         it "should have an address field" do
