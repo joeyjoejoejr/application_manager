@@ -6,7 +6,7 @@
 		<% if request_from_pdfkit? %>
 			<style type="text/css">
 				<%= File.read(Rails.root.join("public","stylesheets","customprint.css")) %>
-				<%= File.read(Rails.root.join("public","stylesheets","blueprint","print.css")) %>
+				<%= File.read(Rails.root.join("public","stylesheets","mycustom.css")) %>
 			</style>
 		<% else %>
 			<%= javascript_include_tag :application %>
