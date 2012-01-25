@@ -19,4 +19,9 @@ module ApplicationHelper
 	def question3
     @quesiton3 = "If you worked for 8 Rivers on a project of your choosing, what would you hope to accomplish in 3 months? "
 	end
+	
+	def request_from_pdfkit?
+    # when generating a PDF, PDFKit::Middleware will set this flag
+    request.env["Rack-Middleware-PDFKit"] == "true"
+  end
 end

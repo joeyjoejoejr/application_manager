@@ -3,12 +3,17 @@
 	<head>
 		<title><%= title %></title>
 		<%= csrf_meta_tag %>
-		<%= javascript_include_tag :application %>
-		<%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
-    <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
-    <%= stylesheet_link_tag 'n_global', :media => 'screen' %>
-    <%= stylesheet_link_tag 'custom', :media => 'screen' %>
-    <%= stylesheet_link_tag 'customprint', :media => 'print' %>
+		<% if request_from_pdfkit? %>
+			<style type="text/css">
+				<%= File.read(Rails.root.join("public","stylesheets","customprint.css")) %>
+			</style>
+		<% else %>
+			<%= javascript_include_tag :application %>
+			<%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
+		  <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
+		  <%= stylesheet_link_tag 'n_global', :media => 'screen' %>
+		  <%= stylesheet_link_tag 'custom', :media => 'screen' %>
+    <% end %>
 	</head>
 	<body>
 	 <div id="wrap" class="container">
@@ -16,7 +21,7 @@
 	    <%= render 'layouts/header' %>
 	  </div>
 	  <div class="column-row">
-	    <p><% flash.each do |key, value| %></p>
+	    <% flash.each do |key, value| %>
         <div class="flash <%= key %>"><%= value %></div>
       <% end %>
 	    <%= yield %>
