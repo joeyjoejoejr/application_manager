@@ -2,16 +2,20 @@
 <%= will_paginate %>
   <% if current_user.admin? %>
     <table class="users">
-      <thead><th colspan = '3'>Users</th></thead>
+      <thead><th colspan = '4'>Users</th></thead>
     <% @users.each do |user| %>
       <tr>
-        <td><%= link_to "#{user.first_name} #{user.last_name}", user %><td>
+        <td><%= link_to "#{user.first_name} #{user.last_name}", user %></td>
     	 	<td><%= link_to "delete", user, :method => :delete, :confirm => "You sure?",
                                   :title => "Delete #{user.first_name} #{user.last_name}" %>
         </td>
         <td><%= link_to_function "Add to Entasso Talent Pool", 
                                  "alert('Hire me to implement this feature')", 
                                  :class => "button" %>
+        </td>
+        <td>
+            <%= link_to image_tag("pdfIcon.png", :border=>0), user_path(user, 
+            :format => "pdf"), :class => "button left small" %>
         </td>
       </tr>
     <% end %>

@@ -1,0 +1,18 @@
+<div id="footer-wrap pdf">
+	<div class="container">	
+		<footer>
+			<ul id="menu-header-footer-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26"><a href="http://www.8riverscapital.com/projects/">Solutions</a></li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="http://www.8riverscapital.com/innovators/">Innovators</a></li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="http://www.8riverscapital.com/office/">About</a></li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="http://www.8riverscapital.com/media/">Media</a></li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="http://www.8riverscapital.com/blog/">Blog</a></li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21"><a href="http://www.8riverscapital.com/opportunities/">Opportunity</a></li>
+      </ul>				
+      <section>
+			  <p id="phone">919 667-1800</p>
+			  <p id="email">info@8riverscapital.com</p>
+			</section>
+			<a id="footerContact" class="button small" href="http://www.8riverscapital.com/office/">Contact Us</a>
+		</footer>
+	</div>
+</div>

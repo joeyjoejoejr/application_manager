@@ -20,6 +20,8 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'will_paginate', '3.0.pre4'
 gem 'nested_form', :git => "git://github.com/ryanb/nested_form.git"
+gem 'pdfkit'
+gem 'wkhtmltopdf-binary'
 
 
 # To use ActiveModel has_secure_password

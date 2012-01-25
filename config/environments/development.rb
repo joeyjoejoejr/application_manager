@@ -27,4 +27,7 @@ ApplicationManager::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  config.action_controller.asset_host = ->(source, request = nil){
+  "http://localhost:3001" if request && request.env['REQUEST_PATH'].include?(".pdf")}
 end

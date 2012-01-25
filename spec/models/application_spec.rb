@@ -30,5 +30,8 @@ end
 #  state        :string(255)
 #  zip_code     :integer
 #  phone_number :string(255)
+#  answer1      :text
+#  answer2      :text
+#  answer3      :text
 #
 

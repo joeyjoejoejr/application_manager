@@ -6,13 +6,16 @@
   <% else %>  
      
      <%= render "shared/application" %>               
-     <div class = "clear">
+     <div class = "clear pdf">
      <p>
     <%= link_to 'Edit Application', edit_application_path(@user.application), :class => "small left button" %></li>
     </p>
     <p>
     <%= link_to "Delete Application", @user.application, :method => :delete, :confirm => "You sure?",
                                 :title => "Delete Application",:class => "left small button" %>
+    </p>
+    <p>
+    <%= link_to image_tag("pdf_icon.png", :border=>0), user_path(@user, :format => "pdf"), :class => "button left small" %>
     </p>
     </div>                 
 <% end %> 

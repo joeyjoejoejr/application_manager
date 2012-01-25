@@ -339,7 +339,3 @@ custom.css
 /* Windows-Safari */
 .windows-safari .post .date { float: right; margin-top: -28px; }
 
-/* My Suff */
-#inline ul {
-  display: inline-block;
-}
